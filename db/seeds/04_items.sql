@@ -34,7 +34,7 @@ INSERT INTO items (name, description, list_id)
 VALUES ('Moishes', 'Venerable steakhouse serving charbroiled meats & Jewish sides in an old-world atmosphere.', 3);
 
 INSERT INTO items (name, description, list_id)
-VALUES ('Bidet', 'Bowl or receptacle designed to be sat on for the purpose of washing the human genitalia, perineum, inner buttocks, and anus. ', 4);
+VALUES ('Bidet', 'Bowl or receptacle designed to be sat on for the purpose of washing the human bits and bots.', 4);
 INSERT INTO items (name, description, list_id)
 VALUES ('Beanbag chair', 'Chair with beans', 4);
 INSERT INTO items (name, description, list_id)

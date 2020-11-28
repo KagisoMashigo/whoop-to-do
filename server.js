@@ -46,9 +46,58 @@ app.use("/api/widgets", widgetsRoutes(db));
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
+
+// get request for homepage when logged in
 app.get("/", (req, res) => {
   res.render("index");
 });
+
+// posts for "/"
+
+
+
+
+// get request for list:id
+app.get("/list:id", (req, res) => {
+  res.render("list");
+});
+
+// app.get("/urls/:shortURL", (req, res) => {
+//   const user = users[req.session.user_id];
+//   const shortURL = req.params.shortURL;
+//   const templateVars = {
+//     user,
+//     shortURL,
+//     longURL: urlDatabase[shortURL].longURL
+//   };
+//   if (!user) {
+//     res.render("error_login", templateVars);
+//   }
+//   res.render("urls_show", templateVars);
+// });
+
+
+
+// get request for register
+app.get("/login", (req, res) => {
+  res.render("register");
+});
+
+
+// SIGNED OUT
+// / is a GET
+// /login needs a POST
+// /register needs a POST
+
+
+
+// ** all need to be redirected if logged out**
+// SIGNED IN
+// /logout needs a POST
+// /update needs a PUT  (profile)
+// /create needs a POST (and redirect TO /posts/:ID)
+// /posts/:ID needs a GET and a DELETE and a PUT
+
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
