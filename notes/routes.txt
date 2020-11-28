@@ -1,0 +1,13 @@
+SIGNED OUT
+/ is a GET
+/login needs a POST
+/register needs a POST
+
+
+
+** all need to be redirected if logged out**
+SIGNED IN
+/logout needs a POST
+/update needs a PUT  (profile)
+/create needs a POST (and redirect TO /posts/:ID)
+/posts/:ID needs a GET and a DELETE and a PUT

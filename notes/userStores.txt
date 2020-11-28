@@ -1,0 +1,43 @@
+USER STORIES
+MVP(
+As a user I want to auto-add to the list because it's more efficient.
+
+As a user I want to edit my items in my list because human-error/mistakes.
+
+As a user I want to delete my items in my list because human-error/mistakes.
+
+
+As a user I want to easily jump between lists from anywhere because accesibiliy.
+
+As a user I want to my default lists to be: Eat, read, watch and purchase because they're more common.
+
+As a user I want  a login page because functionality.
+
+AS a user i want to edit my profile because I am the only me.
+
+)
+
+STRETCH (
+J - As a user I want to a button to jump from bottom/top lists for efficiency.
+
+I - As a user I want recomendations based on previous searches because I want inspiration.
+
+E - As a user I want to create custom lists  because I may have different interests.
+)
+
+
+
+SHINY STRETCH(
+
+J - As a user I want to query to get recomendations because I'm curious.
+
+E - As a user I want to favourite items on my list because I want to keep track of them
+
+I - As a user I want to make my lists public because sharing is caring.
+
+I -   As a user I want a popup/alert at (time of completion - x)
+
+E -
+)
+
+

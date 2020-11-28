@@ -1,0 +1,70 @@
+--- NOTES ---
+* Daily goals/schedule *
+1.
+
+
+
+Stretch work: making it all cool and shiny.... add the bells and whistles
+* Weekend Plan *
+  TEAM MEETING BOTH MORNINGS
+    MEETING
+      make plan for the day
+      ? at night make plan for the next day ?
+
+Emily less work spread out throughout day
+Josh prefers to grind saturday
+Iso prefers mornings and afternoons
+
+* Pair Programming *
+
+
+
+
+
+* Division of Work *
+  VERTICAL at the beginning, maybe if someone gets on a roll/ killing it switch to horizontal.
+  Have an understanding of every aspect, everyone involved in some way or another.
+
+
+
+* Daily check-in/ comms *
+  DISCORD it is
+  Mandatory check in, keep cams on/ at least be present.
+  Break
+
+
+* App structure, End goals *
+
+ES6 for server-side (NodeJS) code
+NodeJS
+Express
+RESTful routes
+One or more CSS or UI "framework"s:
+jQuery
+A CSS preprocessor such as SASS, Stylus, or PostCSS for styling -- or CSS Custom properties and no CSS preprocessor
+PostgreSQL and pg (with promises) for DBMS
+git for version control
+
+Requirements:
+Each todo created should be categorized as one of:
+
+Film / Series (To watch)
+Restaurants, cafes, etc. (To eat)
+Books (To read)
+Products (To buy)
+In order to determine the category the app will probably need to use various API services such as those offered by Google, Wolfram Alpha, Rotten Tomatoes, Amazon, Yelp and others.
+
+API services mentioned above are only suggestions. You will have to investigate how to balance the accurate categorization of items with having to deal with multiple API endpoints.
+
+Users should be able to change a category of an item in case it was mis-categorized or could not be categorized at all.
+
+Users should be able to register, log in, log out and update their profile.
+
+
+* How We Work Together *
+-working as a team, staying at the same pace, no one left behind!
+-any code modications should be done either in pair programming or unanimous decision.
+-Be respectful to eachother OR ELSE!
+
+
+
