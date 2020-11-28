@@ -1,3 +1,5 @@
+--Will need to find alternative to populate list_id
+
 INSERT INTO items (name, description, list_id)
 VALUES ('Old Boy', 'Want a story about revenge? Well look no further than this.', 1)
 INSERT INTO items (name, description, list_id)
