@@ -11,8 +11,9 @@ const router  = express.Router();
 module.exports = (db) => {
   router.get("/", (req, res) => {
     db.query(`SELECT * FROM users;`)
-      .then(data => {
-        const users = data.rows;
+    .then(data => {
+      const users = data.rows;
+      console.log('trying to get lists', users);
         res.json({ users });
       })
       .catch(err => {
