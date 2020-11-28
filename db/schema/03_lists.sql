@@ -2,6 +2,7 @@ DROP TABLE IF EXISTS lists CASCADE;
 CREATE TABLE lists (
   id SERIAL PRIMARY KEY NOT NULL,
   title VARCHAR(255) NOT NULL,
+  public BOOlEAN default false,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   category_id INTEGER REFERENCES categories(id) ON DELETE CASCADE
 );
