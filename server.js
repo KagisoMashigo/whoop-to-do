@@ -3,7 +3,8 @@ require('dotenv').config();
 
 // Web server config
 const PORT       = process.env.PORT || 8080;
-const ENV        = process.env.ENV || "development";
+const
+ENV        = process.env.ENV || "development";
 const express    = require("express");
 const bodyParser = require("body-parser");
 const sass       = require("node-sass-middleware");
@@ -34,12 +35,17 @@ app.use(express.static("public"));
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
-const widgetsRoutes = require("./routes/widgets");
+const listsRoutes = require("./routes/lists");
+const categoriesRoutes = require("./routes/categories");
+const itemsRoutes = require("./routes/items");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
-app.use("/api/widgets", widgetsRoutes(db));
+app.use("/api/lists", listsRoutes(db));
+app.use("/api/categories", categoriesRoutes(db));
+app.use("/api/items", itemsRoutes(db));
+
 // Note: mount other resources here, using the same pattern above
 
 
@@ -53,9 +59,6 @@ app.get("/", (req, res) => {
 });
 
 // posts for "/"
-
-
-
 
 // get request for list:id
 app.get("/list:id", (req, res) => {
@@ -75,6 +78,15 @@ app.get("/list:id", (req, res) => {
 //   }
 //   res.render("urls_show", templateVars);
 // });
+
+// <!-- <% for(let url in urls) { %>
+//   <tr>
+//     <td><%= url %></td>
+//     <td><%= urls[url].longURL %></td>
+//     <td><a href="/urls/<%= url %>/">EDIT</a></td>
+//     <td><form method="POST" action="/urls/<%= url %>/delete"> <button>DELETE</button></form></td>
+//   </tr>
+// <% } %> -->
 
 
 
