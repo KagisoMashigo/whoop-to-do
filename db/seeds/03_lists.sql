@@ -9,4 +9,3 @@ INSERT INTO lists (title, category_id, user_id)
 VALUES ('Products', 3, 8);
 INSERT INTO lists (title, category_id, user_id)
 VALUES ('Miscellaneous', 5, 14);
-

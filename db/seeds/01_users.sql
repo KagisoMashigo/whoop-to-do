@@ -6,7 +6,7 @@ VALUES ('legen_dary@himym.com', 'password', 'barnacle');
 INSERT INTO users (email, password, username)
 VALUES ('judgefudge@himym.com', 'password', 'marshmellow');
 INSERT INTO users (email, password, username)
-VALUES ('robinmetronews1@himym.com', 'password', 'hoser') ;
+VALUES ('robinmetronews1@himym.com', 'password', 'hoser');
 INSERT INTO users (email, password, username)
 VALUES ('lilyartsyfartsy@himym.com', 'password', 'slapbetcommisioner');
 INSERT INTO users (email, password, username)
