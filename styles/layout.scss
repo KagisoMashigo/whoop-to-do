@@ -1,9 +1,105 @@
 // See: https://sass-lang.com/
 
 body {
-  background-color: #EEE;
+  background-color: #f5f2e6;
+  background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png");
 
-  h1 {
-    color: #244751;
+
+}
+
+// nav bar
+.nav {
+  Display: flex;
+  background-color: #694C67;
+  color: black;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5%;
+  font-size: 1.5em;
+  border: solid .3em black;
+
+}
+
+.logo {
+height: 10%
+
+}
+
+.toggle {
+  display: flex;
+  flex-direction: column;
+}
+
+
+// body index.ejs
+
+// all the lists
+.lists {
+  display: flex;
+  font-size: 2em;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 10%;
+  border: solid .05em red
+
+
+}
+
+//individual lists
+.list1{
+  display:flex;
+  flex-flow: column wrap;
+  width: 33%;
+  padding-left: .8%;
+  margin: 1em;
+  border: solid .05em blue
+
   }
+
+  .list2{
+    display:flex;
+    flex-flow: column wrap;
+    width: 33%;
+    padding-left: .8%;
+    margin: 1em;
+    border: solid .05em magenta
+
+  }
+
+  .list3{
+    display:flex;
+    flex-flow: column wrap;
+    width: 33%;
+    padding-left: .8%;
+    margin: 1em;
+    border: solid .05em purple
+
+  }
+
+  .list4{
+    display:flex;
+    flex-flow: column wrap;
+    width: 33%;
+    padding-left: .8%;
+    margin: 1em;
+    border: solid .05em orange
+
+  }
+
+
+// list:id
+
+.list-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border:solid .3em chartreuse
+}
+
+
+
+.toggle_register{
+  display: flex;
+  flex-direction: column;
 }
