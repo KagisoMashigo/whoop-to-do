@@ -91,8 +91,8 @@ app.get("/list:id", (req, res) => {
 
 
 // get request for register
-app.get("/login", (req, res) => {
-  res.render("register");
+app.get("/credentials", (req, res) => {
+  res.render("credentials");
 });
 
 
