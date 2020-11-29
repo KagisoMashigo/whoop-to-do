@@ -1,0 +1,23 @@
+Colour scheme: -Nav
+               -Logo (similar to nav but darker)
+               -Reg Background(light color)
+               -Text & Border for lists(similar to background but dark)
+               -For icons: Change color on hover
+               694C67, E2D7E2, F5F2E6, E6E3D8, ffffff
+               background-color: #f5f2e6;
+              background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png");
+
+Font: -Regular text (regular font + bold font)
+      https://fonts.google.com/specimen/Roboto?category=Sans+Serif&preview.text=Movies&preview.text_type=custom&thickness=6
+      -Stylised text
+      https://fonts.google.com/specimen/Righteous?category=Display&preview.text=Whoop!%20To-Do&preview.text_type=custom
+
+Icons: -Fork & knife for Foods
+       -Cinema reels for Movies
+       -Book for Books
+       -*$* for Purchaes
+       -*Stretch* '+' sign for Add New List
+
+       https://icons.getbootstrap.com/icons/egg-fried/
+
+Logo:  - get a super duper awesome logo

@@ -1,0 +1,8 @@
+ <!-- <% for(let url in urls) { %>
+        <tr>
+          <td><%= url %></td>
+          <td><%= urls[url].longURL %></td>
+          <td><a href="/urls/<%= url %>/">EDIT</a></td>
+          <td><form method="POST" action="/urls/<%= url %>/delete"> <button>DELETE</button></form></td>
+        </tr>
+      <% } %> -->
