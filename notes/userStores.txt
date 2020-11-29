@@ -23,6 +23,11 @@ J - As a user I want to a button to jump from bottom/top lists for efficiency.
 I - As a user I want recomendations based on previous searches because I want inspiration.
 
 E - As a user I want to create custom lists  because I may have different interests.
+
+? - As a user I want to have the logo redirect to homepage because functionality.
+
+? - As a user I want to have the logo in the tab thumbnail because style.
+
 )
 
 
