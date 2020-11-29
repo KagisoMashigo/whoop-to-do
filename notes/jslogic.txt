@@ -6,3 +6,32 @@
           <td><form method="POST" action="/urls/<%= url %>/delete"> <button>DELETE</button></form></td>
         </tr>
       <% } %> -->
+
+
+nav bar template
+
+<nav class="navbar navbar-expand-md navbar-dark bg-success">
+  <a class="navbar-brand" href="/urls">TinyApp</a>
+  <% if (!user) { %>
+    <form class="form-inline" action="/register" method="GET">
+      <button type="submit" class="btn btn-outline-light" style="margin: 1em" >Register</button>
+    </form>
+    <form class="form-inline" action="/login" method="GET">
+      <button type="submit" class="btn btn-outline-light" style="margin: 1em" >Sign In</button>
+    </form>
+  <% } else { %>
+    <h6 class="navbar-brand">Logged in as: <%= user %></h6>
+    <form class="form-inline" action="/logout" method="GET">
+    <button type="submit" class="btn btn-outline-light" style="margin: 1em" >logout</button>
+  </form>
+    <% } %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="/urls">My URLs</a>
+      <a class="nav-item nav-link" href="/urls/new">Create New URL</a>
+    </div>
+  </div>
+</nav>

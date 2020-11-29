@@ -7,30 +7,6 @@ body {
 
 }
 
-// nav bar
-.nav {
-  Display: flex;
-  background-color: #694C67;
-  color: black;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5%;
-  font-size: 1.5em;
-  border: solid .3em black;
-
-}
-
-.logo {
-height: 10%
-
-}
-
-.toggle {
-  display: flex;
-  flex-direction: column;
-}
-
-
 // body index.ejs
 
 // all the lists
