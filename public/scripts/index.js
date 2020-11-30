@@ -1,18 +1,5 @@
 // This file contains all the logic for displaying and appending a user's lists
 
-const getListByUser = function(user) {
-  return db.query(`
-  SELECT lists.title, items.name
-  FROM lists
-  JOIN items ON list_id = lists.id
-  JOIN categories ON category_id = categories.id
-  WHERE categories.id = $1
-  `, [user])
-  .then(res => {
-    console.log(res.rows);
-  })
-}
-
 
 // Fixes HTML vulnerabilities
 const escape =  function(str) {
@@ -23,24 +10,23 @@ const escape =  function(str) {
 
 
 // Adds new element to a list by appending it.
-const addNewItem = function(item) {
-  let $item = $();
-  return $item;
-}
+const addNewItem = function(items) {
+  for (let item of items) {
+    $('#individual-list').append(`
+    <li>${item.name}</li>`
+    );
+  }
+};
 
 // Maybe create a function that loops through the lists (?)
 
 // Creates a box containing the list's title and its elements.
 // This box will exist inside the "display-lists" section in the body of index.ejs.
-const createNewList = function(list) {
+const createNewList = function(list, callback) {
   let $list = $(`<article class="list" id="list">
-                   <h5>Books</h5>
-                   <ul>
-                     <li>1984</li>
-                     <li>The Ultimate Hitchhiker's Guide to the Galaxy</li>
-                     <li>Farenheit 451</li>
-                     <li>The Hobbit</li>
-                     <li>Moliere: L'Oeuvre Complete</li>
+                   <h5>${list.title}</h5>
+                   <ul class="individual-list" id="individual-list">
+                     ${addNewItem()}
                    </ul>
                  </article>`
                 );
@@ -81,5 +67,5 @@ const renderLists = function(/*lists*/) {
 $(document).ready(function() {
   console.log("Ready to go!");
   renderLists()
-  getListByUser()
+  // getListByUser()
 });

@@ -41,3 +41,16 @@ $(() => {
     }
   });
 });
+
+
+// emtupp: list by user
+$(() => {
+  $.ajax({
+    method: "GET",
+    url: "/api/userlist"
+  }).done((items) => {
+    for(item in items) {
+      $("<div>").text(item.name).appendTo($("body"));
+    }
+  });
+});
