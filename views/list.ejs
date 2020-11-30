@@ -7,23 +7,94 @@
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/list.css" type="text/css" />
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
 
   <body>
     <%- include('partials/_nav') %>
-    <div class = "list-container">
-    <h1>List Name</h1>
-    <div class="items">
-    jslogic
-  </div>
-  </div>
+      <div class="center">
+        <section class="todo-cmp">
+          <header class="todo-cmp__header">
+            <h2> List Title</h2>
+            <p>
+              <script> document.write(new Date().toDateString()); </script>
+            </p>
+          </header>
+
+            <ul class="todo-cmp__list">
+              <li>
+                <label for="todo-01">
+                  <input id="todo-01" type="checkbox">
+                  <span>Item 1</span>
+                </label>
+                    <a href="#">
+                      <span class="glyphicon glyphicon-edit"></span>
+                    </a>
+                    <a href="#">
+                      <span class="glyphicon glyphicon-trash"></span>
+                    </a>
+                    <a href="#">
+                      <span class="glyphicon glyphicon-heart"></span>
+                    </a>
+              </li>
+              <li>
+                <label for="todo-02">
+                  <input id="todo-02" type="checkbox">
+                  <span>Item 2</span>
+                </label>
+                      <a href="#">
+                        <span class="glyphicon glyphicon-edit"></span>
+                      </a>
+                      <a href="#">
+                        <span class="glyphicon glyphicon-trash"></span>
+                      </a>
+                      <a href="#">
+                        <span class="glyphicon glyphicon-heart"></span>
+                      </a>
+              </li>
+                <li>
+                <label for="todo-03">
+                  <input id="todo-03" type="checkbox">
+                  <span>Item 3</span>
+                </label>
+                        <a href="#">
+                          <span class="glyphicon glyphicon-edit"></span>
+                        </a>
+                        <a href="#">
+                          <span class="glyphicon glyphicon-trash"></span>
+                        </a>
+                        <a href="#">
+                          <span class="glyphicon glyphicon-heart"></span>
+                        </a>
+              </li>
+              <li>
+                <label for="todo-04">
+                  <input id="todo-04" type="checkbox">
+                  <span>Item 4</span>
+                </label>
+                <a href="#">
+                  <span class="glyphicon glyphicon-edit"></span>
+                </a>
+                <a href="#">
+                  <span class="glyphicon glyphicon-trash"></span>
+                </a>
+                <a href="#">
+                  <span class="glyphicon glyphicon-heart"></span>
+                </a>
+
+              </li>
+          </ul>
+        </section>
+      </div>
+    </div>
   </body>
 </html>
