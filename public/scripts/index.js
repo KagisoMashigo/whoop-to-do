@@ -1,5 +1,19 @@
 // This file contains all the logic for displaying and appending a user's lists
 
+const getListByUser = function(user) {
+  return db.query(`
+  SELECT lists.title, items.name
+  FROM lists
+  JOIN items ON list_id = lists.id
+  JOIN categories ON category_id = categories.id
+  WHERE categories.id = $1
+  `, [user])
+  .then(res => {
+    console.log(res.rows);
+  })
+}
+
+
 // Fixes HTML vulnerabilities
 const escape =  function(str) {
   let div = document.createElement('div');
@@ -67,4 +81,5 @@ const renderLists = function(/*lists*/) {
 $(document).ready(function() {
   console.log("Ready to go!");
   renderLists()
+  getListByUser()
 });

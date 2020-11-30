@@ -2,5 +2,40 @@
 
 .display-lists {
   display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 150px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: linear-gradient(to bottom right, rgb(54, 0, 126), rgb(35, 0, 148), rgb(0, 204, 255));
+  color: white;
+  font-size: 1.5em;
+  border-radius: 5%;
+  width: 25%;
+}
+
+// max-width: 250px;
+// padding: 1rem;
+// position: relative;
+// background: linear-gradient(to right, red, purple);
+// padding: 3px;
+
+h5 {
+  display: flex;
+  justify-content: center;
+  font-size: 2em;
+  margin: 40px 0px 0px 0px;
+}
+
+ul {
+  margin: 16px;
+  padding: 10px;
+}
+
+li {
+  margin: 16px;
 }
