@@ -40,6 +40,9 @@ const categoriesRoutes = require("./routes/categories");
 const itemsRoutes = require("./routes/items");
 const querriesRoutes = require("./routes/list_querries");
 
+// added by emtupp
+const getListByUser = require("./routes/index_queries/lists_by_user");
+
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -49,6 +52,9 @@ app.use("/api/categories", categoriesRoutes(db));
 app.use("/api/items", itemsRoutes(db));
 app.use("/api/list1", querriesRoutes(db));
 // Note: mount other resources here, using the same pattern above
+
+// added by emtupp
+app.use("/api/userlist", getListByUser(db, 2));
 
 
 // Home page
