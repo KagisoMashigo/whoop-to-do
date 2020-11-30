@@ -1,13 +1,12 @@
 // This is responsible for toggling the form using the arrow on the page
 const toggleForm = () => {
-  const $arrow = $('#togglearrow');
-  $arrow.on('click', function() {
-    const $error = $('#error'); 
-    const $newTweet = $('.tweet-form');
-    if ($newTweet.is(":visible")) {
-      $newTweet.slideUp(750);
+  const $loginReg = $('.toggle_register');
+  $loginReg.on('click', function() {
+    const $loginRegForm = $('.container');
+    if ($loginRegForm.is(":visible")) {
+      $loginRegForm.slideUp(750);
     } else {
-      $newTweet.slideDown(750);
+      $loginRegForm.slideDown(750);
     }
   });
 };
