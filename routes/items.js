@@ -6,7 +6,7 @@ module.exports = (db) => {
     db.query(`SELECT * FROM items;`)
     .then(data => {
       const items = data.rows;
-      console.log('trying to get items', items);
+      // console.log('trying to get items', items);
         res.json({ items });
       })
       .catch(err => {
