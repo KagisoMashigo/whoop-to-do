@@ -13,7 +13,7 @@ module.exports = (db) => {
     db.query(`SELECT * FROM users;`)
     .then(data => {
       const users = data.rows;
-      console.log('trying to get lists', users);
+      // console.log('trying to get lists', users);
         res.json({ users });
       })
       .catch(err => {

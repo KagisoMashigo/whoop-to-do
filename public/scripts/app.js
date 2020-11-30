@@ -3,10 +3,10 @@ $(() => {
     method: "GET",
     url: "/api/users"
   }).done((users) => {
-    for(user of users) {
+    for(user in users) {
       $("<div>").text(user.name).appendTo($("body"));
     }
-  });;
+  });
 });
 
 $(() => {
@@ -14,7 +14,7 @@ $(() => {
     method: "GET",
     url: "/api/lists"
   }).done((lists) => {
-    for(list of lists) {
+    for(list in lists) {
       $("<div>").text(list.title).appendTo($("body"));
     }
   });;
@@ -25,10 +25,10 @@ $(() => {
     method: "GET",
     url: "/api/categories"
   }).done((categories) => {
-    for(category of categories) {
+    for(category in categories) {
       $("<div>").text(category.category).appendTo($("body"));
     }
-  });;
+  });
 });
 
 $(() => {
@@ -36,8 +36,8 @@ $(() => {
     method: "GET",
     url: "/api/items"
   }).done((items) => {
-    for(item of items) {
+    for(item in items) {
       $("<div>").text(item.name).appendTo($("body"));
     }
-  });;
+  });
 });
