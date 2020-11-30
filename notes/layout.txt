@@ -1,0 +1,68 @@
+// See: https://sass-lang.com/
+
+body {
+  background-color: #f5f3ed;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+// body index.ejs
+
+// all the lists
+.lists {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 10%;
+}
+
+//individual lists
+.list1{
+  display:flex;
+  flex-flow: column wrap;
+  background-color: white;
+  border: solid 3px #E6E3D8;
+  border-radius: 3%;
+  }
+
+  .list2{
+    display:flex;
+    flex-flow: column wrap;
+    background-color: white;
+    border: solid 3px #E6E3D8;
+    border-radius: 5%;
+  }
+
+  .list3{
+    display:flex;
+    flex-flow: column wrap;
+    background-color: white;
+    border: solid 3px #E6E3D8;
+    border-radius: 5%;
+  }
+
+  .list4{
+    display:flex;
+    flex-flow: column wrap;
+    background-color: white;
+    border: solid 3px #E6E3D8;
+    border-radius: 5%;
+  }
+
+
+// list:id
+
+.list-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border:solid .3em chartreuse
+}
+
+
+
+.toggle_register{
+  display: flex;
+  flex-direction: column;
+}
