@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
@@ -24,17 +25,29 @@
       <div class="center">
         <section class="todo-cmp">
           <header class="todo-cmp__header">
-            <h2> List Title</h2>
+            <h2>
+              <%= lists[0].username %>'s  <%= lists[0].category %>
+            </h2>
             <p>
               <script> document.write(new Date().toDateString()); </script>
             </p>
           </header>
-
+          <form action="/api/lists" method="POST">
+            <button class="button" type="submit">Add an item</button>
+          </form>
             <ul class="todo-cmp__list">
               <li>
                 <label for="todo-01">
                   <input id="todo-01" type="checkbox">
-                  <span>Item 1</span>
+                  <span>
+                    <div class = name>
+                      <%= lists[0].name%>
+                    </div>
+                    </strong>
+                     <div>
+                       <%= lists[0].description%>
+                     </div>
+                  </span>
                 </label>
                     <a href="#">
                       <span class="glyphicon glyphicon-edit"></span>
@@ -49,7 +62,14 @@
               <li>
                 <label for="todo-02">
                   <input id="todo-02" type="checkbox">
-                  <span>Item 2</span>
+                  <span>
+                    <div class = name>
+                      <%= lists[1].name%>
+                    </div>
+                    <div>
+                      <%= lists[1].description%>
+                    </div>
+                 </span>
                 </label>
                       <a href="#">
                         <span class="glyphicon glyphicon-edit"></span>
@@ -64,7 +84,14 @@
                 <li>
                 <label for="todo-03">
                   <input id="todo-03" type="checkbox">
-                  <span>Item 3</span>
+                  <span>
+                    <div class = name>
+                      <%= lists[2].name%>
+                    </div>
+                    <div>
+                      <%= lists[2].description%>
+                    </div>
+                 </span>
                 </label>
                         <a href="#">
                           <span class="glyphicon glyphicon-edit"></span>
@@ -79,7 +106,37 @@
               <li>
                 <label for="todo-04">
                   <input id="todo-04" type="checkbox">
-                  <span>Item 4</span>
+                  <span>
+                    <div class = name>
+                      <%= lists[3].name%>
+                    </div>
+                    <div>
+                      <%= lists[3].description%>
+                    </div>
+                 </span>
+                </label>
+                <a href="#">
+                  <span class="glyphicon glyphicon-edit"></span>
+                </a>
+                <a href="#">
+                  <span class="glyphicon glyphicon-trash"></span>
+                </a>
+                <a href="#">
+                  <span class="glyphicon glyphicon-heart"></span>
+                </a>
+
+              </li>
+              <li>
+                <label for="todo-05">
+                  <input id="todo-05" type="checkbox">
+                  <span>
+                    <div class = name>
+                      <%= lists[4].name%>
+                    </div>
+                    <div>
+                      <%= lists[4].description%>
+                    </div>
+                 </span>
                 </label>
                 <a href="#">
                   <span class="glyphicon glyphicon-edit"></span>
