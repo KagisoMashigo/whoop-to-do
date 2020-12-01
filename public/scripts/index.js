@@ -22,15 +22,24 @@ const addNewItem = function(items) {
 
 // Creates a box containing the list's title and its elements.
 // This box will exist inside the "display-lists" section in the body of index.ejs.
-const createNewList = function(list, callback) {
-  let $list = $(`<article class="list" id="list">
-                   <h5>${list.title}</h5>
-                   <ul class="individual-list" id="individual-list">
-                     ${addNewItem()}
-                   </ul>
-                 </article>`
-                );
-  return $list;
+const createNewList = function(lists) {
+  let arr = [];
+  for (let item in lists) {
+    if (!arr.includes(list[item].title)) {
+      arr.push(list[item].title);
+    }
+  }
+  arr.forEach(toDoList => {
+    let $list = $(`<article class="list" id="list">
+                    <h5>${list.title}</h5>
+                    <ul class="individual-list" id="individual-list">
+                      ${addNewItem()}
+                    </ul>
+                   </article>`
+                   );
+    return $list;
+  })
+
 };
 
 // ^ Needs a function that creates a list object (?) ^
