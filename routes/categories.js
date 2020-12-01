@@ -6,6 +6,7 @@ module.exports = (db) => {
     db.query(`SELECT * FROM categories;`)
     .then(data => {
       const categories = data.rows;
+
         res.json({ categories });
       })
       .catch(err => {

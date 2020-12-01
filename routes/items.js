@@ -3,7 +3,9 @@ const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    db.query(`SELECT * FROM items;`)
+    db.query(`SELECT name, description
+    FROM items
+    WHERE list_id = 1`)
     .then(data => {
       const items = data.rows;
       // console.log('trying to get items', items);
