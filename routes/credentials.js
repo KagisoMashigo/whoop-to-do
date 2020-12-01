@@ -5,7 +5,7 @@
  * See: https://expressjs.com/en/guide/using-middleware.html#middleware.router
  */
 
- // POA - 1: registation, logout, css for page, bcrypt
+ // POA - 1: logout, css for page, bcrypt, refractoring & testing
 
 const express = require('express');
 const router  = express.Router();
