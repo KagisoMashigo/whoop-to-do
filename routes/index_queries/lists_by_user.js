@@ -11,8 +11,9 @@ const userListDB = function(id, db) {
   return userDB;
 };
 
-module.exports = (db, user) => {
+module.exports = (db) => {
   router.get("/", (req, res) => {
+    const userID = req.session["user_id"];
     // const user = users[req.session.user_id]
     db.query(`
     SELECT lists.title, lists.id, items.name
@@ -20,7 +21,7 @@ module.exports = (db, user) => {
     JOIN items ON list_id = lists.id
     JOIN users ON user_id = users.id
     WHERE users.id = $1;
-    `, [user])
+    `, [userID])
     .then(data => {
       const list = data.rows;
       const templateVars = { list: list }
@@ -34,3 +35,24 @@ module.exports = (db, user) => {
   });
   return router;
 };
+
+
+
+// if (userID) {
+//   (db.query(`
+//   // querry to show user list
+//  `, [userID]))
+//     .then(data => {
+//       const lists = data.rows;
+//       const templateVars = { lists: lists }
+//       res.render("index", templateVars)
+//     })
+//     .catch(err => {
+//       res
+//         .status(500)
+//         .json({ error: err.message });
+//     });
+// } else {
+//   res.redirect("/api/credentials")
+// }
+
