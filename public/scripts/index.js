@@ -10,9 +10,10 @@ const escape =  function(str) {
 
 
 // Adds new element to a list by appending it.
-const addNewItem = function(listTitle) {
-  for (let item of listTitle) {
-    $('#individual-list').append(`
+const addItems = function($list, items) {
+  for (let item of items) {
+    console.log('addNewItem item is: ', item)
+    $('ul', $list).append(`
     <li>${escape(item)}</li>`
     );
   }
@@ -20,14 +21,15 @@ const addNewItem = function(listTitle) {
 
 // Creates a box containing the list's title and its elements.
 // This box will exist inside the "display-lists" section in the body of index.ejs.
-const createNewList = function(listTitle) {
+const createNewList = function(list) {
+  console.log('createNewList listTitle is: ', list)
   let $list = $(`<article class="list" id="list">
-                  <h5>${escape(listTitle[0])}</h5>
+                  <h5>${escape(list[0])}</h5>
                   <ul class="individual-list" id="individual-list">
-                    ${escape(addNewItem(listTitle[1]))}
                   </ul>
                  </article>`
                 );
+  addItems($list, list[1]);
   return $list;
 };
 
@@ -43,8 +45,9 @@ const renderLists = function(lists) {
       }
     }
   }
-  for (let title of Object.entries(dbObj)) {
-    const $list = createNewList(title);
+  for (let list of Object.entries(dbObj)) {
+    console.log('renderList title is: ', list)
+    const $list = createNewList(list);
     $('#display-lists').append($list);
   }
 };
