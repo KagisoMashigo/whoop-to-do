@@ -63,8 +63,8 @@ app.use("/api/list1", querriesRoutes(db));
 app.use("/api/credentials", credRoutes(db));
 
 // added by emtupp
-app.use("/api/userlist", getListByUser(db, 2));
-app.use("/", renderIndex(db, 2));
+app.use("/api/userlist", getListByUser(db));
+app.use("/", renderIndex(db));
 
 
 // Home page
