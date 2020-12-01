@@ -41,7 +41,8 @@ const itemsRoutes = require("./routes/items");
 const querriesRoutes = require("./routes/list_querries");
 
 // added by emtupp
-const getListByUser = require("./routes/index_queries/lists_by_user");
+const getListByUser = require("./routes/index_queries/lists_by_user_db");
+const renderIndex = require("./routes/index_queries/lists_by_user");
 
 
 // Mount all resource routes
@@ -54,7 +55,8 @@ app.use("/api/list1", querriesRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
 // added by emtupp
-app.use("/", getListByUser(db, 2));
+app.use("/api/userlist", getListByUser(db, 2));
+app.use("/", renderIndex(db, 2));
 
 
 // Home page

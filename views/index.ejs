@@ -24,6 +24,7 @@
     <%- include('partials/_nav') %>
     <h3>My Lists</h3>
     <section class="display-lists" id="display-lists">
+
       <article class="list" id="list">
         <h5><%= list[1].title %></h5>
         <ul>
@@ -37,64 +38,9 @@
             <li><%= item %></li>
           <% } %>
         </ul>
-
       </article>
-
-
-      <article class="list" id="list">
-        <h5><%= list[1].title %></h5>
-        <ul>
-          <% let arr2 = [] %>
-          <% for (let item in list) { %>
-            <% if (!arr2.includes(list[item].title)) { %>
-              <% arr2.push(list[item].title) %>
-            <% } %>
-          <% } %>
-          <% for (let item of arr2) { %>
-            <li><%= item %></li>
-          <% } %>
-        </ul>
-
-      </article>
-
-
-      <article class="list" id="list">
-        <h5><%= list[1].title %></h5>
-        <ul>
-          <% let arr3 = [] %>
-          <% for (let item in list) { %>
-            <% if (!arr3.includes(list[item].title)) { %>
-              <% arr3.push(list[item].title) %>
-            <% } %>
-          <% } %>
-          <% for (let item of arr3) { %>
-            <li><%= item %></li>
-          <% } %>
-        </ul>
-
-      </article>
-
-
-      <article class="list" id="list">
-        <h5><%= list[1].title %></h5>
-        <ul>
-          <% let arr4 = [] %>
-          <% for (let item in list) { %>
-            <% if (!arr4.includes(list[item].title)) { %>
-              <% arr4.push(list[item].title) %>
-            <% } %>
-          <% } %>
-          <% for (let item of arr4) { %>
-            <li><%= item %></li>
-          <% } %>
-        </ul>
-
-      </article>
-
 
     </section>
-
-
   </body>
 </html>
 
