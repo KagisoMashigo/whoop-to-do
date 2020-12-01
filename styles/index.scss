@@ -1,0 +1,136 @@
+// See: https://sass-lang.com/
+
+.display-lists {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 150px;
+  padding: 0px 150px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom, #ffa256, #ffa256, #b64f4f);
+  color: white;
+  font-size: 1.5em;
+  // border-radius: 3%;
+  width: 350px;
+  margin: 10px;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.7);
+}
+
+h5 {
+  display: flex;
+  justify-content: center;
+  font-size: 2em;
+  margin: 40px 0px 0px 0px;
+}
+
+ul {
+  margin: 16px;
+  padding: 10px;
+}
+
+li {
+  margin: 16px;
+}
+
+
+
+// Google Keep Layout CSS
+
+// @width: 240px;
+// @gap: 16px;
+// @padding: 32px; // extra padding from body
+
+// body {
+//   background-color: #e8e8e8;
+//   //padding: 32px 16px;
+//   padding: 16px;
+// }
+// .notes {
+//   //max-width: @width*4 + @gap*5 + @padding;
+//   margin: 0 auto;
+// }
+// .note {
+//   width: 100%;
+//   padding: 8px;
+//   box-sizing: border-box;
+// }
+
+// @media screen and (min-width: (@width*2 + @gap*3 + @padding)) {
+//   .note {
+//     width: 50%;
+//   }
+// }
+// @media screen and (min-width: (@width*3 + @gap*4 + @padding)) {
+//   .note {
+//     width: 33.3%;
+//   }
+// }
+// @media screen and (min-width: (@width*4 + @gap*5 + @padding)) {
+//   .note {
+//     width: 25%;
+//   }
+// }
+
+// .note-inner {
+//   background-color: #fff;
+//   min-height: 4em;
+//   border-radius: 2px;
+//   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.2),0 1px 5px 0 rgba(0,0,0,0.12);
+//   transition: box-shadow 0.2s;
+// }
+// .note:hover .note-inner {
+//   box-shadow: 0 2px 15px rgba(0,0,0,0.30);
+// }
+// // really not sure where to put this. Kinda requires more body padding, but then that gets tricky at mobile resolutions where the padding just takes up too much screen space
+// .big-add {
+//   background-color: #F44336;
+//   color: #fff;
+//   padding: 0;
+//   border-radius: 50%;
+//   position: fixed;
+//   bottom: 16px;
+//   right: 16px;
+//   border: none;
+//   box-shadow: none;
+//   width: 56px;
+//   height: 56px;
+//   padding: 16px;
+//   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+//   cursor: pointer;
+//   i {
+//     font-size: 24px;
+//     line-height: 24px;
+//   }
+// }
+
+
+
+// GOOGLE KEEP LAYOUT HTML
+
+// <div class="notes"></div>
+
+// <button class="big-add show-add-note"><i class="material-icons">add</i></button>
+
+
+
+// GOOGLE KEEP LAYOUT JS
+
+// makeNote = ->
+//   height = parseInt 100+Math.random()*500, 10
+//   '<div class="note"><div class="note-inner" style="height: '+height+'px"></div></div>'
+
+// $ ->
+//   $notes = $ ".notes"
+//   for x in [0..10]
+//     $note = $ makeNote()
+//     $notes.append $note
+
+//   $('.notes').isotope
+//     itemSelector: '.note',
+//     layoutMode: 'masonry'
