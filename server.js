@@ -41,7 +41,7 @@ app.use(express.static("public"));
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
 const credRoutes = require("./routes/credentials");
-
+const regRoutes = require("./routes/register");
 const listsRoutes = require("./routes/lists");
 const categoriesRoutes = require("./routes/categories");
 const itemsRoutes = require("./routes/items");
@@ -49,7 +49,6 @@ const itemsRoutes = require("./routes/items");
 // added by emtupp
 const getListByUser = require("./routes/index_queries/lists_by_user_db");
 const renderIndex = require("./routes/index_queries/lists_by_user");
-
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -59,6 +58,7 @@ app.use("/api/categories", categoriesRoutes(db));
 app.use("/api/items", itemsRoutes(db));
 // Note: mount other resources here, using the same pattern above
 app.use("/api/credentials", credRoutes(db));
+app.use("/api/register", regRoutes(db));
 
 // added by emtupp
 app.use("/api/userlist", getListByUser(db));
@@ -132,5 +132,5 @@ app.get("/list:id", (req, res) => {
 
 
 app.listen(PORT, () => {
-  console.log(`Example app listening on port ${PORT}`);
+  console.log(`Whoop-To-Do server listening on port ${PORT} leggo!`);
 });
