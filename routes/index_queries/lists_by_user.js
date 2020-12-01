@@ -24,23 +24,7 @@ module.exports = (db) => {
         });
     } else {
       // res redirect to credentials
-      (db.query(`
-      SELECT lists.title, lists.id, items.name
-      FROM lists
-      JOIN items ON list_id = lists.id
-      WHERE lists.public = true;
-     `))
-        .then(data => {
-          const lists = data.rows;
-          const templateVars = { lists, userID }
-          res.render("index", templateVars)
-        })
-        .catch(err => {
-          res
-            .status(500)
-            .json({ error: err.message });
-        });
-
+      res.redirect("/api/credentials")
       }
   });
   return router;
