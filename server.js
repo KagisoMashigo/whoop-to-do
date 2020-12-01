@@ -54,7 +54,7 @@ const renderIndex = require("./routes/index_queries/lists_by_user");
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
-app.use("/api/lists", listsRoutes(db));
+app.use("/lists", listsRoutes(db));
 app.use("/api/categories", categoriesRoutes(db));
 app.use("/api/items", itemsRoutes(db));
 // Note: mount other resources here, using the same pattern above
