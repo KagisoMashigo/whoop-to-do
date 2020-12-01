@@ -37,10 +37,10 @@ module.exports = (db) => {
     console.log(req.body.text)
     db.query(`UPDATE items
     SET list_id = $1
-    WHERE name LIKE '% $2 %';
-    `, [ 7, text])
+    WHERE name ILIKE '%$2%';
+    `, [ 3, text])
     .then(item => {
-      res.redirect("/api/lists")
+      res.redirect("/lists")
     })
   })
 
