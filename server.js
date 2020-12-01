@@ -10,6 +10,11 @@ const bodyParser = require("body-parser");
 const sass       = require("node-sass-middleware");
 const app        = express();
 const morgan     = require('morgan');
+const cookieSession = require('cookie-session');
+app.use(cookieSession({
+  name: 'session',
+  keys: ['key1', 'key2']
+}));
 
 // PG database client/connection setup
 const { Pool } = require('pg');
@@ -35,6 +40,8 @@ app.use(express.static("public"));
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
+const credRoutes = require("./routes/credentials");
+
 const listsRoutes = require("./routes/lists");
 const categoriesRoutes = require("./routes/categories");
 const itemsRoutes = require("./routes/items");
@@ -53,6 +60,7 @@ app.use("/api/categories", categoriesRoutes(db));
 app.use("/api/items", itemsRoutes(db));
 app.use("/api/list1", querriesRoutes(db));
 // Note: mount other resources here, using the same pattern above
+app.use("/api/credentials", credRoutes(db));
 
 // added by emtupp
 app.use("/api/userlist", getListByUser(db, 2));
@@ -101,17 +109,21 @@ app.get("/list:id", (req, res) => {
 
 
 // get request for register
-app.get("/credentials", (req, res) => {
-  res.render("credentials");
-});
+// app.get("/credentials", (req, res) => {
+//     // const userID = req.session["user_id"];
+//   // const templateVars = { shortURL: req.params.shortURL, longURL: urlDatabase[req.params.shortURL], user: users[userID] };
+//   res.render("credentials");
+// });
+
+// When someone presses register
+// it will post all info from the form to the db and add them
+// it will then redirect them to index that contains lists
 
 
 // SIGNED OUT
 // / is a GET
 // /login needs a POST
 // /register needs a POST
-
-
 
 // ** all need to be redirected if logged out**
 // SIGNED IN
