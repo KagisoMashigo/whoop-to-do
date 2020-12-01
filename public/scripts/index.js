@@ -21,7 +21,7 @@ const addItems = function($list, items) {
 // Creates a box containing the list's title and its elements.
 // This box will exist inside the "display-lists" section in the body of index.ejs.
 const createNewList = function(list) {
-  let $list = $(`<article class="list" id="list">
+  let $list = $(`<article class="list">
                   <h5>${escape(list[0])}</h5>
                   <ul class="individual-list">
                   </ul>
@@ -56,5 +56,9 @@ $(document).ready(function() {
   console.log("Ready to go!");
   $.ajax('/api/userlist', { method: 'GET' })
   .then(renderLists)
+
+  $('.list').on("click", function() {
+    console.log('clicky click!')
+  });
 
 });
