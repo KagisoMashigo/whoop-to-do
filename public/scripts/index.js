@@ -23,9 +23,9 @@ const addItems = function($list, items) {
 // This box will exist inside the "display-lists" section in the body of index.ejs.
 const createNewList = function(list) {
   console.log('createNewList listTitle is: ', list)
-  let $list = $(`<article class="list" id="list">
+  let $list = $(`<article class="list">
                   <h5>${escape(list[0])}</h5>
-                  <ul class="individual-list" id="individual-list">
+                  <ul class="individual-list">
                   </ul>
                  </article>`
                 );
