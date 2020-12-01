@@ -44,11 +44,12 @@
 //   });
 // });
 
-// credentials (iso)
+
+// emtupp: list by user
 // $(() => {
 //   $.ajax({
 //     method: "GET",
-//     url: "/credentials"
+//     url: "/api/userlist"
 //   }).done((items) => {
 //     for(item in items) {
 //       $("<div>").text(item.name).appendTo($("body"));

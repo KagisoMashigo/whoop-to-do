@@ -46,6 +46,10 @@ const listsRoutes = require("./routes/lists");
 const categoriesRoutes = require("./routes/categories");
 const itemsRoutes = require("./routes/items");
 
+// added by emtupp
+const getListByUser = require("./routes/index_queries/lists_by_user_db");
+const renderIndex = require("./routes/index_queries/lists_by_user");
+
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -56,15 +60,19 @@ app.use("/api/items", itemsRoutes(db));
 // Note: mount other resources here, using the same pattern above
 app.use("/api/credentials", credRoutes(db));
 
+// added by emtupp
+app.use("/api/userlist", getListByUser(db));
+app.use("/", renderIndex(db));
+
 
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
 // get request for homepage when logged in
-app.get("/", (req, res) => {
-  res.render("index");
-});
+// app.get("/", (req, res) => {
+//   res.render("index");
+// });
 
 // posts for "/"
 
