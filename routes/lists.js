@@ -27,13 +27,27 @@ module.exports = (db) => {
             .json({ error: err.message });
         });
     } else {
-      res.redirect('/api/credentials')
+      res.redirect("/api/credentials")
     }
   })
 
-  // router.post("/", (req, res) => {
+  router.post("/", (req, res) => {
+    const userID = req.session["user_id"];
+    const text = req.body.text;
+    console.log(req.body.text)
+    db.query(`UPDATE items
+    SET list_id = $1
+    WHERE name LIKE '% $2 %';
+    `, [ 7, text])
+    .then(item => {
+      res.redirect("/api/lists")
+    })
+  })
 
-  // })
+  // router.post("/", (req, res) => {
+  //   req.session["user_id"] = null;
+  //   res.redirect("/api/credentials");
+  // });
 
   return router;
 };
