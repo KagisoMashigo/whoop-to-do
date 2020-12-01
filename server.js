@@ -54,7 +54,7 @@ app.use("/api/list1", querriesRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
 // added by emtupp
-app.use("/api/userlist", getListByUser(db, 2));
+app.use("/", getListByUser(db, 2));
 
 
 // Home page
@@ -62,9 +62,9 @@ app.use("/api/userlist", getListByUser(db, 2));
 // Separate them into separate routes files (see above).
 
 // get request for homepage when logged in
-app.get("/", (req, res) => {
-  res.render("index");
-});
+// app.get("/", (req, res) => {
+//   res.render("index");
+// });
 
 // posts for "/"
 
