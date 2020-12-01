@@ -38,7 +38,6 @@ const usersRoutes = require("./routes/users");
 const listsRoutes = require("./routes/lists");
 const categoriesRoutes = require("./routes/categories");
 const itemsRoutes = require("./routes/items");
-const querriesRoutes = require("./routes/list_querries");
 
 
 // Mount all resource routes
@@ -47,7 +46,6 @@ app.use("/api/users", usersRoutes(db));
 app.use("/api/lists", listsRoutes(db));
 app.use("/api/categories", categoriesRoutes(db));
 app.use("/api/items", itemsRoutes(db));
-app.use("/api/list1", querriesRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
 
