@@ -18,7 +18,7 @@ module.exports = (db) => {
           const lists = data.rows;
           // console.log("DATA:", lists)
           // res.json({ lists });
-          const templateVars = { lists: lists }
+          const templateVars = { lists, userID }
           res.render("list", templateVars)
         })
         .catch(err => {

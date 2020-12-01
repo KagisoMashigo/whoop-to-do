@@ -13,9 +13,33 @@ const router  = express.Router();
 module.exports = (db) => {
 
   router.get("/", (req, res) => {
-    res.render("credentials")
+    const userID = req.session["user_id"];
+    if (!userID){
+      (db.query(`
+      SELECT lists.title, lists.id, items.name
+      FROM lists
+      JOIN items ON list_id = lists.id
+      WHERE lists.public = true;
+      `))
+      .then(data => {
+        console.log("USER: ", userID)
+          const lists = data.rows;
+          const templateVars = { lists, userID }
+          res.render("credentials", templateVars)
+        })
+        .catch(err => {
+          res
+            .status(500)
+            .json({ error: err.message });
+        });
+
+
+    } else {
+
+      res.redirect("/")
+    }
   });
-   
+
   // login
   router.post("/", (req, res) => {
     console.log("posted to...")

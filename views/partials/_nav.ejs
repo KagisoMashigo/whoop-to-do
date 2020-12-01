@@ -1,8 +1,13 @@
-<nav class="nav">
+  <nav class="nav">
   <span class="logo" >
     <p>Whoop!</p>
     <p>To-Do</p>
   </span>
+  <% if (!userID) { %>
+    <div class="toggle_register">
+      <button>Login/register</button>
+    </div>
+  <% } else { %>
   <div class = "icons">
     <button id="food" type="submit">Restaurants</button>
     <button id="books" type="submit">Books</button>
@@ -16,4 +21,5 @@
       <button class="button" type="submit">Logout</button>
     </form>
   </div>
+<% } %>
 </nav>
