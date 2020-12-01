@@ -1,3 +1,5 @@
+// Was commented out to help make the login fuctionality work
+
 // $(() => {
 //   $.ajax({
 //     method: "GET",
