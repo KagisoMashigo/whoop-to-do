@@ -5,6 +5,8 @@
  * See: https://expressjs.com/en/guide/using-middleware.html#middleware.router
  */
 
+ // POA - 1: registation, logout, css for page, bcrypt
+
 const express = require('express');
 const router  = express.Router();
 
@@ -32,7 +34,7 @@ module.exports = (db) => {
           // set cookies
           req.session["user_id"] = user.id;
           // redirect to list user homepage
-          res.redirect("/")
+          res.redirect("/api/lists")
         } else {
           // same as 25 except with password error
           console.log("no such password")
