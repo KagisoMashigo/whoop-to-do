@@ -3,7 +3,6 @@
  */
 
 // POA - 1: logout, css for page, refractoring (halfway done here, need to make modular now) & testing
-//  Yesterday: was making logout on lists page
 const bcrypt = require('bcrypt');
 const express = require('express');
 const router  = express.Router();
