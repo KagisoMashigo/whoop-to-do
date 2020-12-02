@@ -1,6 +1,10 @@
 $(document).ready(function() {
   console.log('nav, ready to go!')
 
+  $('#logo').on('click', function(e) {
+    window.location.href = `/`;
+  })
+
   $('#food').on('click', function(e) {
     const listID = e.delegateTarget.id;
     if (listID === 'food') {
