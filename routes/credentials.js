@@ -3,7 +3,6 @@
  */
 
 // POA - 1: logout, css for page, refractoring (halfway done here, need to make modular now) & testing
-//  Yesterday: was making logout on lists page
 const bcrypt = require('bcrypt');
 const express = require('express');
 const router  = express.Router();
@@ -71,7 +70,7 @@ module.exports = (db) => {
           // set cookies
           req.session["user_id"] = user.id;
           // redirect to list user homepage
-          res.redirect("/api/lists")
+          res.redirect("/")
         } else {
           // same as 25 except with password error
           console.log("ERROR: no such password")

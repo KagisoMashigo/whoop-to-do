@@ -11,7 +11,7 @@ module.exports = (db) => {
     FROM lists
     JOIN items ON list_id = lists.id
     JOIN users ON user_id = users.id
-    WHERE users.id = $1;
+    WHERE users.id = $1 AND lists.id = 1;
     `, [userID])
     .then(data => {
       const list = data.rows;

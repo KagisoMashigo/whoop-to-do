@@ -2,6 +2,7 @@
 * Daily goals/schedule *
 1.
 
+// API key = AIzaSyBT-iVATn5jscoq7CUm_qUmzb_s9NdR01E
 
 
 Stretch work: making it all cool and shiny.... add the bells and whistles
