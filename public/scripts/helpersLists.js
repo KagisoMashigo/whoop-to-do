@@ -45,10 +45,13 @@ console.log(response)
     })
   })
 
-
 })
 
-
+// <form action="/lists" method="POST" class="item_toggle">
+// <label for="new_item_name"> </label>
+// <textarea name="text"  id="name-text" placeholder ="Name of new item"></textarea>
+// <button id="add"type="submit">Submit</button>
+// </form>
 
 const addItems = function ($list, items) {
   // console.log("add item's item is: ", item)

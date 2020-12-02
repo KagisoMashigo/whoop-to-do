@@ -35,15 +35,15 @@ module.exports = (db) => {
 // when you add an item it edits the list_id to correct id
   router.post("/", (req, res) => {
     const userID = req.session["user_id"];
+    console.log(req, "req")
     const text = req.body.text;
     const listID = 1;
-    console.log(req.body.text)
     db.query(`UPDATE items
     SET list_id =$1
     WHERE name ILIKE '%'||$2||'%';
     `, [listID, text])
     .then(item => {
-      res.send(200)
+      res.redirect("/lists")
     })
     .catch(err => {
       res
