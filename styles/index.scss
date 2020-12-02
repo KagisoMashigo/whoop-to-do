@@ -6,11 +6,10 @@ $font: 'Source Sans Pro', sans-serif;
   font-family: $font;
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
   flex-wrap: wrap;
+  columns: 3;
   margin-top: 150px;
-  padding: 0px 150px;
+  padding: 0px 50px;
 }
 
 .list {
