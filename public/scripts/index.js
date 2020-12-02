@@ -44,10 +44,7 @@ const renderLists = function(lists) {
       }
     }
   }
-  console.log('dbObj: ', dbObj)
-  console.log('lists: ', lists)
   for (let list of Object.entries(dbObj)) {
-    console.log('list is: ', list)
     const $list = createNewList(list);
     $('#display-lists').append($list);
   }
@@ -62,8 +59,8 @@ $(document).ready(function() {
   .then((lists) => {
     renderLists(lists)
     $('.list').on("click", function(e) {
-      console.log('clicky click!')
-      console.log(e.currentTarget)
+      const listID = e.delegateTarget.id;
+      window.location.href = `/list/${listID}`
     });
   });
 });
