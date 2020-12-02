@@ -7,7 +7,7 @@ module.exports = (db) => {
     // const user = users[req.session.user_id]
     if (userID) {
     db.query(`
-    SELECT lists.title, lists.id, items.name
+    SELECT lists.title, lists.id, items.*, users.username
     FROM lists
     JOIN items ON list_id = lists.id
     JOIN users ON user_id = users.id
@@ -24,7 +24,7 @@ module.exports = (db) => {
       });
     } else {
       (db.query(`
-      SELECT lists.title, lists.id, items.name
+      SELECT lists.title, lists.id, items.*
       FROM lists
       JOIN items ON list_id = lists.id
       WHERE lists.public = true;
