@@ -71,7 +71,7 @@ module.exports = (db) => {
           // set cookies
           req.session["user_id"] = user.id;
           // redirect to list user homepage
-          res.redirect("/api/lists")
+          res.redirect("/")
         } else {
           // same as 25 except with password error
           console.log("ERROR: no such password")
