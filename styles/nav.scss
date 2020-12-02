@@ -29,3 +29,13 @@ p {
   display: flex;
   flex-direction: column;
 }
+
+.toggle_register {
+  font-size: 20px;
+}
+
+.toggle_register:hover {
+  cursor: pointer;
+  color: white;
+  text-shadow: 4px 4px 6px #000000;
+}
