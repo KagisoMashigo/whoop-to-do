@@ -55,10 +55,11 @@ $(document).ready(function() {
 
   console.log("Ready to go!");
   $.ajax('/api/userlist', { method: 'GET' })
-  .then(renderLists)
-
-  $('.list').on("click", function() {
-    console.log('clicky click!')
+  .then((lists) => {
+    renderLists(lists)
+    $('.list').on("click", function(e) {
+      console.log('clicky click!')
+      console.log(e.currentTarget)
+    });
   });
-
 });
