@@ -6,13 +6,25 @@
   <% if (!userID) { %>
     <div>
       <span class="toggle_register">Login or Register</span>
+
     </div>
   <% } else { %>
   <div class = "icons">
-    <button id="food" type="submit">Restaurants</button>
-    <button id="books" type="submit">Books</button>
-    <button id="movies" type="submit">Movies</button>
-    <button id="products" type="submit">Products</button>
+    <form class="form-inline" action="/api/lists" method="GET">
+      <button id="food" type="submit"><i class="large material-icons">restaurant</i></button>
+    </form>
+    <form class="form-inline" action="/list/listID" method="GET">
+      <button id="books" type="submit"><i class="large material-icons">import_contacts</i></button>
+    </form>
+    <form class="form-inline" action="/list/listID" method="GET">
+      <button id="movies" type="submit"><i class="large material-icons">camera_roll</i></button>
+    </form>
+    <form class="form-inline" action="/list/listID" method="GET">
+      <button id="products" type="submit"><i class="large material-icons">monetization_on</i></button>
+    </form>
+    <form class="form-inline" action="/list/new" method="GET">
+      <button id="new" type="submit"><i class="large material-icons">add</i></button>
+    </form>
   </div>
   <div class="toggle">
     <span>Create List</span>
