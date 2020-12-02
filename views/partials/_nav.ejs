@@ -1,5 +1,5 @@
   <nav class="nav">
-  <span class="logo" >
+  <span class="logo" id="logo">
     <span>Whoop!</span>
     <span>To-Do</span>
   </span>
@@ -10,24 +10,13 @@
     </div>
   <% } else { %>
   <div class = "icons">
-    <form class="form-inline" action="/api/lists" method="GET">
       <button id="food" type="submit"><i class="large material-icons">restaurant</i></button>
-    </form>
-    <form class="form-inline" action="/list/listID" method="GET">
       <button id="books" type="submit"><i class="large material-icons">import_contacts</i></button>
-    </form>
-    <form class="form-inline" action="/list/listID" method="GET">
       <button id="movies" type="submit"><i class="large material-icons">camera_roll</i></button>
-    </form>
-    <form class="form-inline" action="/list/listID" method="GET">
       <button id="products" type="submit"><i class="large material-icons">monetization_on</i></button>
-    </form>
-    <form class="form-inline" action="/list/new" method="GET">
       <button id="new" type="submit"><i class="large material-icons">add</i></button>
-    </form>
   </div>
   <div class="toggle">
-    <span>Create List</span>
     <span>Update Profile</span>
     <form autocomplete="off" action="/api/credentials/logout" method="POST">
       <button class="button" type="submit">Logout</button>
