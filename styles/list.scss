@@ -7,12 +7,18 @@ body{
 	display: flex;
 }
 
+
 .center {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
 }
+
+.item_toggle{
+  display:none
+}
+
 
 .todo-cmp {
 	background: #E2D7E2;
@@ -43,12 +49,19 @@ body{
 		}
 	}
 // buttons
-a {
-  font-size: .9em;
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  font-size: 2em
 }
+footer {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.4em;
 
-
-
+}
 	&__list {
 		list-style: none;
     padding: 0;
@@ -59,7 +72,7 @@ a {
 			margin: 0;
 			text-align: left;
       width: 100%;
-      font-size: 1.6em;
+      font-size: 1em;
 
 
 			label {
@@ -85,7 +98,7 @@ a {
           text-decoration: underline;
         }
 
-				input + span::after {
+				input + .container::after {
 						content: "";
 						display: block;
 						border: 1px solid #497081;
@@ -102,7 +115,7 @@ a {
 					/* https://matthewlein.com/tools/ceaser */
 				}
 
-				input + span::before {
+				input + .container::before {
 						content: "✔";
 						display: block;
 						font-size: 22px;
@@ -115,12 +128,12 @@ a {
 						opacity: 0;
 				}
 
-				input:checked + span {
+				input:checked + .container {
 					color: #ccc;
 					transition: all 550ms ease-in-out;
 				}
 
-				input:checked + span::after {
+				input:checked + .container::after {
 						opacity: 0;
 					 	height: 17px;
 					 	width: 17px;
@@ -128,7 +141,7 @@ a {
 					  right: -2px;
 				}
 
-				input:checked + span::before {
+				input:checked + .container::before {
 						opacity: 1;
 					 transition: all 550ms ease-in-out;
 				}
