@@ -1,9 +1,13 @@
-<nav class="nav">
-  <a href="/"> <span class="logo" >
+  <nav class="nav">
+  <span class="logo" >
     <p>Whoop!</p>
     <p>To-Do</p>
   </span>
-</a>
+  <% if (!userID) { %>
+    <div class="toggle_register">
+      <button>Login/register</button>
+    </div>
+  <% } else { %>
   <div class = "icons">
     <button id="food" type="submit">Restaurants</button>
     <button id="books" type="submit">Books</button>
@@ -13,6 +17,9 @@
   <div class="toggle">
     <span>Create List</span>
     <span>Update Profile</span>
-    <span>Logout</span>
+    <form autocomplete="off" action="/api/credentials" method="POST">
+      <button class="button" type="submit">Logout</button>
+    </form>
   </div>
+<% } %>
 </nav>

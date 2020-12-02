@@ -1,6 +1,9 @@
 // See: https://sass-lang.com/
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400');
+$font: 'Source Sans Pro', sans-serif;
 
 .display-lists {
+  font-family: $font;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,7 +16,7 @@
 .list {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to bottom, #ffa256, #ffa256, #b64f4f);
+  background: #999099;
   color: white;
   font-size: 1.5em;
   // border-radius: 3%;
