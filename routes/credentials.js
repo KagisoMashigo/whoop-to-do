@@ -54,31 +54,39 @@ module.exports = (db) => {
   // login
   router.post("/", (req, res) => {
     // console.log("posted to...")    
-    const { email, password } = req.body;
+    const { email, password, username } = req.body;
     // console.log(req.body, email, password)
     getUserByEmail(db, email)
     .then(dbres => {
       if(dbres.rows.length === 0) {
         // ("no such user") redirect here (potentially with info as to why)
-        console.log("no such user")
+        console.log("ERROR: no such user")
         res.redirect("/api/credentials");
       } else {
         let user = dbres.rows[0]; // in this instance having [0] is okay bc we deteremined that there would only be 1 entry
         if (bcrypt.compareSync(password, user.password)) {
           // if match
+          console.log("password worked")
+          console.log("Logged in as: ", user.username, user.email, user.password)
           // set cookies
           req.session["user_id"] = user.id;
           // redirect to list user homepage
-          console.log("password worked")
-          console.log(password)
           res.redirect("/api/lists")
         } else {
           // same as 25 except with password error
-          console.log("no such password")
+          console.log("ERROR: no such password")
           res.redirect("/api/credentials");
         }
       }
     })
   });
+
+  // Logout functionality
+  router.post("/logout", (req, res) => {
+    // console.log("POST RECEIVED")
+    req.session = null;
+    res.redirect("/api/credentials");
+  });
+
   return router;
 };
