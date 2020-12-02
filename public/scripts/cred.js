@@ -11,6 +11,17 @@ const toggleForm = () => {
   });
 };
 
+const loginErrors = () => {
+  
+}
+
+// Function made to check errors on form submission
+const checkSectionErrors = (section, errMsgHtml, delay, slideSpeed) => {
+  $(section).empty();
+  const output = $(section).append(errMsgHtml).slideDown(slideSpeed).delay(delay).slideUp(slideSpeed);
+  return output;
+};
+
 // Document ready ensures all functions will only be called once the page has loaded
 $(document).ready(() => {
   toggleForm();

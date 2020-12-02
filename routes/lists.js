@@ -49,8 +49,8 @@ module.exports = (db) => {
   //   res.redirect("/api/credentials");
   // });
 
-  return router;
-};
+//   return router;
+// };
 
 
 // router.get("/", (req, res) => {
