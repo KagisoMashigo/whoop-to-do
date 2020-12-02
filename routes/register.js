@@ -43,11 +43,12 @@ module.exports = (db) => {
           .then(dbres => {
             // console.log("USER: ", dbres)
             const user = dbres.rows[0]; // in this instance having [0] is okay bc we deteremined that there would only be 1 entry
+            console.log("Registered User: ", user.username, user.password, user.email, user.id)
+            // console.log("ID: ", user.id)
             // console.log("USER: ", user)
             // if match
             // set cookies
             req.session["user_id"] = user.id;
-            console.log("ID: ", user.id)
             // redirect to list user homepage
             res.redirect("/")
           })
