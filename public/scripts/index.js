@@ -60,7 +60,7 @@ $(document).ready(function() {
     renderLists(lists)
     $('.list').on("click", function(e) {
       const listID = e.delegateTarget.id;
-      window.location.href = `/list/${listID}`
+      window.location.href = `/list/${listID}`;
     });
   });
 });
