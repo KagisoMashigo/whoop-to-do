@@ -45,6 +45,7 @@ const regRoutes = require("./routes/register");
 const listsRoutes = require("./routes/lists");
 const categoriesRoutes = require("./routes/categories");
 const itemsRoutes = require("./routes/items");
+// const apiRoutes = require("./routes/books");
 
 // added by emtupp
 const getListByUser = require("./routes/index_queries/lists_by_user_db");
@@ -64,8 +65,9 @@ app.use("/list", listsRoutes(db));
 app.use("/api/categories", categoriesRoutes(db));
 app.use("/api/items", itemsRoutes(db));
 // Note: mount other resources here, using the same pattern above
-app.use("/api/credentials", credRoutes(db));
-app.use("/api/register", regRoutes(db));
+app.use("/credentials", credRoutes(db));
+app.use("/register", regRoutes(db));
+// app.use("/api/books", apiRoutes(db));
 
 // added by emtupp
 app.use("/api/userlist", getListByUser(db));
@@ -80,54 +82,10 @@ app.use("/api/tmdblist", fetchMovieApi(db))
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
-// app.get("/urls/:shortURL", (req, res) => {
-//   const user = users[req.session.user_id];
-//   const shortURL = req.params.shortURL;
-//   const templateVars = {
-//     user,
-//     shortURL,
-//     longURL: urlDatabase[shortURL].longURL
-//   };
-//   if (!user) {
-//     res.render("error_login", templateVars);
-//   }
-//   res.render("urls_show", templateVars);
+// get request for list:id
+// app.get("/list:id", (req, res) => {
+//   res.render("list");
 // });
-
-// <!-- <% for(let url in urls) { %>
-//   <tr>
-//     <td><%= url %></td>
-//     <td><%= urls[url].longURL %></td>
-//     <td><a href="/urls/<%= url %>/">EDIT</a></td>
-//     <td><form method="POST" action="/urls/<%= url %>/delete"> <button>DELETE</button></form></td>
-//   </tr>
-// <% } %> -->
-
-
-
-// get request for register
-// app.get("/credentials", (req, res) => {
-//     // const userID = req.session["user_id"];
-//   // const templateVars = { shortURL: req.params.shortURL, longURL: urlDatabase[req.params.shortURL], user: users[userID] };
-//   res.render("credentials");
-// });
-
-// When someone presses register
-// it will post all info from the form to the db and add them
-// it will then redirect them to index that contains lists
-
-
-// SIGNED OUT
-// / is a GET
-// /login needs a POST
-// /register needs a POST
-
-// ** all need to be redirected if logged out**
-// SIGNED IN
-// /logout needs a POST
-// /update needs a PUT  (profile)
-// /create needs a POST (and redirect TO /posts/:ID)
-// /posts/:ID needs a GET and a DELETE and a PUT
 
 
 app.listen(PORT, () => {
