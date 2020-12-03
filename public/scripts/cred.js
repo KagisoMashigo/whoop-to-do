@@ -54,6 +54,7 @@ $(document).ready(() => {
     }
   });
 
+
   // test for login form
   $("#signup").on('click', function() {
     console.log("Clicked!")

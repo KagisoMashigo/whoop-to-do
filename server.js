@@ -56,7 +56,7 @@ const getList = require("./routes/lists_personal");
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
-app.use("/lists", listsRoutes(db));
+app.use("/list", listsRoutes(db));
 app.use("/api/categories", categoriesRoutes(db));
 app.use("/api/items", itemsRoutes(db));
 // Note: mount other resources here, using the same pattern above
@@ -74,9 +74,10 @@ app.use("/api/lists", getList(db));
 // Separate them into separate routes files (see above).
 
 // get request for list:id
-app.get("/list:id", (req, res) => {
-  res.render("list");
-});
+// app.get("/list:id", (req, res) => {
+//   res.render("list");
+// });
+
 
 app.listen(PORT, () => {
   console.log(`Whoop-To-Do server listening on port ${PORT} leggo!`);
