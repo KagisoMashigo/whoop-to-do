@@ -6,27 +6,7 @@
 const bcrypt = require('bcrypt');
 const express = require('express');
 const router  = express.Router();
-// const getUserByEmail = require('./credHelpers.js');
-
-const getUserByEmail = function(db, email) {
-  const sqlQuery = `
-  SELECT * 
-  FROM users
-  WHERE email = $1;
-  `;
-  const values = [email];
-  return db.query(sqlQuery, values)
-};
-
-const displayPublicLists = (db) => {
-  const sqlQuery = `
-  SELECT lists.title, lists.id, items.name
-  FROM lists
-  JOIN items ON list_id = lists.id
-  WHERE lists.public = true;
-  `;
-  return db.query(sqlQuery)
-}
+const { getUserByEmail, displayPublicLists } = require('./credHelpers.js');
 
 module.exports = (db) => {
 
@@ -86,6 +66,5 @@ module.exports = (db) => {
     req.session = null;
     res.redirect("/api/credentials");
   });
-
   return router;
 };

@@ -18,4 +18,14 @@
     return db.query(sqlQuery, values)
   }
 
-module.export = { getUserByEmail };
+  const displayPublicLists = (db) => {
+    const sqlQuery = `
+    SELECT lists.title, lists.id, items.name
+    FROM lists
+    JOIN items ON list_id = lists.id
+    WHERE lists.public = true;
+    `;
+    return db.query(sqlQuery)
+  }
+
+module.exports = { getUserByEmail, displayPublicLists, addUser };
