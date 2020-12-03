@@ -17,6 +17,8 @@
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
     <script type="text/javascript" src="/scripts/helpersLists.js"></script>
+    <script type="text/javascript" src="/scripts/nav.js"></script>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -49,12 +51,35 @@
           <ul class="todo-cmp__list">
           <section class="display-personal-lists" id="display-personal-lists">
             <% for(let list in lists) { %>
-                <%= lists[list].name %><br>
-                <%= lists[list].description %><br>
+               <li id= <%= lists[list].id %>>
+                <label for="todo- <%= lists[list].id%>">
+                  <input id="todo- <%= lists[list].id %>" type="checkbox">
+                  <container class ="container">
+                    <div class="list_name">
+                      <%= lists[list].name %><br>
+                    </div>
+                    <div class="list_description">
+                      <%= lists[list].description %><br>
+                    </div>
+                  </container>
+                  </label>
+                <footer class= "buttons">
+                  <form class="item_delete">
+                  <button id ="delete" type="submit">
+                    <span class="glyphicon glyphicon-trash"></span>
+                  </button>
+                </form>
+                <form class="item_fave">
+                  <button id="fave" type="submit">
+                    <span class="glyphicon glyphicon-heart"></span>
+                    </button>
+                  </form>
+                  </footer>
+                </li>
             <% } %>
-
-          </section>
           </ul>
+          </section>
+
 
       </div>
     </div>
