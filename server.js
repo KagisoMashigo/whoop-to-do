@@ -49,7 +49,7 @@ const itemsRoutes = require("./routes/items");
 // added by emtupp
 const getListByUser = require("./routes/index_queries/lists_by_user_db");
 const renderIndex = require("./routes/index_queries/lists_by_user");
-const getList = require("./routes/lists_personal");
+// const getList = require("./routes/lists_personal");
 
 
 // Mount all resource routes
@@ -66,7 +66,7 @@ app.use("/api/register", regRoutes(db));
 app.use("/api/userlist", getListByUser(db));
 app.use("/", renderIndex(db));
 
-app.use("/api/lists", getList(db));
+// app.use("/api/lists", getList(db));
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).

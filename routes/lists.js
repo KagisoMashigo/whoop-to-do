@@ -32,7 +32,7 @@ module.exports = (db) => {
         .then(data => {
           const lists = data.rows;
           const templateVars = { lists, userID, listID }
-          console.log(templateVars)
+         // console.log(templateVars)
           res.render("list", templateVars)
         })
         .catch(err => {
@@ -47,7 +47,7 @@ module.exports = (db) => {
 
 
 // when you add an item it edits the list_id to correct id
-  router.post("/", (req, res) => {
+  router.post("/list/:ID", (req, res) => {
     const userID = req.session["user_id"];
     const text = req.body.text;
 
@@ -60,7 +60,7 @@ module.exports = (db) => {
     .then(item => {
 
       // v change
-      res.redirect("/lists")
+      res.redirect("/:listID")
     })
     .catch(err => {
       res
@@ -79,7 +79,7 @@ module.exports = (db) => {
     .then(item => {
 
       // v change
-      res.redirect("/lists")
+      res.redirect("/listID")
     })
     .catch(err => {
       res
@@ -97,7 +97,7 @@ module.exports = (db) => {
     `, [itemId])
     .then(item => {
       // v change
-      res.redirect("/lists")
+      res.redirect("/listID")
     })
     .catch(err => {
       res
