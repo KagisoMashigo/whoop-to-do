@@ -1,5 +1,5 @@
 
-// // Fixes HTML vulnerabilities
+// Fixes HTML vulnerabilities
 // const escape = function (str) {
 //   let div = document.createElement('div');
 //   div.appendChild(document.createTextNode(str));
@@ -25,24 +25,25 @@ $(document).ready(() => {
   // test for login form
 
   $('.display-personal-lists').on('click', '#delete', (event) => {
-    // console.log(event.currentTarget)
-    const itemId = $(event.currentTarget).parent().parent().attr("id")
-    //  console.log("itemID:", itemId)
-    $.ajax(`/lists/delete/${itemId}`, { method: "POST" })
+   // console.log(event.currentTarget, "click")
+    const itemId = $(event.currentTarget).parent().parent().parent().attr("id")
+      console.log("itemID:", itemId)
+    $.ajax(`/list/:listID/delete/${itemId}`, { method: "POST" })
       .then((response) => {
         getList()
-        //console.log(response)
+        console.log(response)
       })
   })
 
   $('.display-personal-lists').on('click', '#fave', (event) => {
-    // console.log(event.currentTarget)
-    const itemId = $(event.currentTarget).parent().parent().attr("id")
-    //  console.log("itemID:", itemId)
-    $.ajax(`/lists/fave/${itemId}`, { method: "POST" })
+   // console.log(event.currentTarget)
+
+    const itemId = $(event.currentTarget).parent().parent().parent().attr("id")
+       console.log("itemID:", itemId)
+    $.ajax(`/list/:listID/fave/${itemId}`, { method: "POST" })
       .then((response) => {
-        getList()
-        //console.log(response)
+
+        console.log(response)
       })
   })
 
@@ -53,11 +54,11 @@ $(document).ready(() => {
 
 })
 
-// // <form action="/lists" method="POST" class="item_toggle">
-// // <label for="new_item_name"> </label>
-// // <textarea name="text"  id="name-text" placeholder ="Name of new item"></textarea>
-// // <button id="add"type="submit">Submit</button>
-// // </form>
+// <form action="/lists" method="POST" class="item_toggle">
+// <label for="new_item_name"> </label>
+// <textarea name="text"  id="name-text" placeholder ="Name of new item"></textarea>
+// <button id="add"type="submit">Submit</button>
+// </form>
 
 // const addItems = function ($list, items) {
 //   // console.log("add item's item is: ", item)
@@ -97,16 +98,16 @@ $(document).ready(() => {
 //   return $list
 
 
-//   // edit button
-//   // <button id="edit">
-//   //        <span class="glyphicon glyphicon-edit"></span>
-//   //      </button>
+  // edit button
+  // <button id="edit">
+  //        <span class="glyphicon glyphicon-edit"></span>
+  //      </button>
 
 
 
 // };
 
-// // Renders the lists
+// Renders the lists
 // const renderPersonalLists = function (lists) {
 //   let dbObj = {};
 //   for (let list in lists) {

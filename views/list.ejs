@@ -43,17 +43,17 @@
           <div class="add_item">
             <button>Add an item</button>
           </div>
-          <form action="/lists" method="POST" class="item_toggle">
+          <form action="/list/:listID" method="POST" class="item_toggle">
             <label for="new_item_name"> </label>
             <textarea name="text"  id="name-text" placeholder ="Name of new item"></textarea>
             <button id="add" type="submit">Submit</button>
           </form>
+          <% for(let list in lists) { %>
           <ul class="todo-cmp__list">
           <section class="display-personal-lists" id="display-personal-lists">
-            <% for(let list in lists) { %>
-               <li id= <%= lists[list].id %>>
-                <label for="todo- <%= lists[list].id%>">
-                  <input id="todo- <%= lists[list].id %>" type="checkbox">
+               <li id= <%= lists[list].item_id %>>
+                <label for="todo- <%= lists[list].item_id%>">
+                  <input id="todo- <%= lists[list].item_id %>" type="checkbox">
                   <container class ="container">
                     <div class="list_name">
                       <%= lists[list].name %><br>

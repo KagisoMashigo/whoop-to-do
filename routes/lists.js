@@ -20,14 +20,16 @@ module.exports = (db) => {
   router.get("/:listID", (req, res) => {
     const userID = req.session["user_id"]
     const listID = req.params.listID;
+    console.log(listID, 'this is get route listID')
   //   console.log(req.session, "sesh")
     if (userID) {
       (db.query(`
-      SELECT items.name, items.description, items.id, lists.title, lists.id, users.username
+      SELECT items.name, items.description, items.id AS item_id, lists.title, lists.id, users.username
       FROM lists
       JOIN items ON list_id = lists.id
       JOIN users ON user_id = users.id
-      WHERE users.id = $1 AND list_id = $2;
+      WHERE users.id = $1 AND list_id = $2
+      LIMIT 15;
       `, [userID, listID]))
         .then(data => {
           const lists = data.rows;
@@ -47,20 +49,20 @@ module.exports = (db) => {
 
 
 // when you add an item it edits the list_id to correct id
-  router.post("/list/:ID", (req, res) => {
+  router.post("/:listID", (req, res) => {
     const userID = req.session["user_id"];
     const text = req.body.text;
-
     // change hardcoded
+    console.log("post route listid is:", res)
     const listID = req.params.listID;
     db.query(`UPDATE items
-    SET list_id =$1
-    WHERE name ILIKE '%'||$2||'%'
+    SET list_id = $1
+    WHERE name ILIKE '%'||$2||'%';
     `, [listID, text])
     .then(item => {
 
       // v change
-      res.redirect("/:listID")
+      res.redirect("/list/:listID")
     })
     .catch(err => {
       res
@@ -69,7 +71,7 @@ module.exports = (db) => {
     });
   })
 
-  router.post("/delete/:id", (req, res) => {
+  router.post("/:listID/delete/:id", (req, res) => {
     const userID = req.session["user_id"];
     const itemId = req.params.id;
     db.query(`UPDATE items
@@ -79,7 +81,7 @@ module.exports = (db) => {
     .then(item => {
 
       // v change
-      res.redirect("/listID")
+      res.redirect("/list/:listID")
     })
     .catch(err => {
       res
@@ -88,7 +90,7 @@ module.exports = (db) => {
     });
   })
 
-  router.post("/fave/:id", (req, res) => {
+  router.post("/:listID/fave/:id", (req, res) => {
     const userID = req.session["user_id"];
     const itemId = req.params.id;
     db.query(`UPDATE items
@@ -97,7 +99,7 @@ module.exports = (db) => {
     `, [itemId])
     .then(item => {
       // v change
-      res.redirect("/listID")
+      res.redirect("/list/:listID")
     })
     .catch(err => {
       res
