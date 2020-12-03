@@ -17,13 +17,13 @@ module.exports = (db) => {
       .then(data => {
         // console.log("USER: ", userID)
         const lists = data.rows;
-        const templateVars = { lists, userID };
-        res.render("credentials", templateVars);
+        const templateVars = { lists, userID }
+        res.render("credentials", templateVars)
         })
         .catch(err => {
           res
-          .status(500);
-          .json({ error: err.message });
+          .status(500)
+          .json({ error: err.message })
         });
     } else {
       res.redirect("/");
