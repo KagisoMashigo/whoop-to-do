@@ -1,3 +1,4 @@
+
 // Fixes HTML vulnerabilities
 const escape = function (str) {
   let div = document.createElement('div');
@@ -27,28 +28,36 @@ $(document).ready(() => {
     // console.log(event.currentTarget)
     const itemId = $(event.currentTarget).parent().parent().parent().attr("id")
     //  console.log("itemID:", itemId)
-    $.ajax(`/lists/delete/${itemId}`, {method: "POST"})
-    .then((response) => {
-    getList()
-console.log(response)
-    })
+    $.ajax(`/lists/delete/${itemId}`, { method: "POST" })
+      .then((response) => {
+        getList()
+        //console.log(response)
+      })
   })
 
   $('.display-personal-lists').on('click', '#fave', (event) => {
     // console.log(event.currentTarget)
     const itemId = $(event.currentTarget).parent().parent().parent().attr("id")
     //  console.log("itemID:", itemId)
-    $.ajax(`/lists/fave/${itemId}`, {method: "POST"})
-    .then((response) => {
-    getList()
-console.log(response)
-    })
+    $.ajax(`/lists/fave/${itemId}`, { method: "POST" })
+      .then((response) => {
+        getList()
+        //console.log(response)
+      })
   })
+
+  // $('.add_item').on('click', '#add', (event) => {
+  //   console.log('log', event.currentTarget).parent().parent()
+  // })
 
 
 })
 
-
+// <form action="/lists" method="POST" class="item_toggle">
+// <label for="new_item_name"> </label>
+// <textarea name="text"  id="name-text" placeholder ="Name of new item"></textarea>
+// <button id="add"type="submit">Submit</button>
+// </form>
 
 const addItems = function ($list, items) {
   // console.log("add item's item is: ", item)
@@ -112,7 +121,7 @@ const renderPersonalLists = function (lists) {
     }
   }
   for (let list of Object.entries(dbObj)) {
-    console.log(list)
+    // console.log(list)
     const $list = createNewPersonalList(list);
     $('#display-personal-lists').append($list);
   }
@@ -122,15 +131,15 @@ const renderPersonalLists = function (lists) {
 
 
 $(document).ready(function () {
-getList();
+  getList();
   console.log("Ready to go!");
 });
 
-  const getList = () => {
-    $.ajax('/api/lists', { method: 'GET' })
+const getList = () => {
+  $.ajax('/api/lists', { method: 'GET' })
     .then((lists) => {
       console.log('ajax promise argument: ', lists)
       renderPersonalLists(lists)
     });
-  }
+}
 

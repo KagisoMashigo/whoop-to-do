@@ -22,7 +22,7 @@ const checkSectionErrors = (section, errMsgHtml, delay, slideSpeed) => {
 $(document).ready(() => {
   toggleForm();
   // Error handling
-  
+
   // test for login form
 $("#signup").on('click', function() {
   console.log("Clicked!")
