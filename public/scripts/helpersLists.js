@@ -30,7 +30,7 @@ $(document).ready(() => {
       console.log("itemID:", itemId)
     $.ajax(`/list/:listID/delete/${itemId}`, { method: "POST" })
       .then((response) => {
-        getList()
+
         console.log(response)
       })
   })
@@ -46,13 +46,13 @@ $(document).ready(() => {
         console.log(response)
       })
   })
-
+})
 //   // $('.add_item').on('click', '#add', (event) => {
 //   //   console.log('log', event.currentTarget).parent().parent()
 //   // })
 
 
-})
+
 
 // <form action="/lists" method="POST" class="item_toggle">
 // <label for="new_item_name"> </label>

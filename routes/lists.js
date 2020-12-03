@@ -1,6 +1,15 @@
 const express = require('express');
 const router = express.Router();
 
+const getListId = function(db, email) {
+  const sqlQuery = `
+  SELECT id, title
+  FROM lists;
+  `;
+  const values = [email];
+  return db.query(sqlQuery, values)
+};
+
 module.exports = (db) => {
 
   // app.get("/urls/:shortURL", (req, res) => {
@@ -29,6 +38,7 @@ module.exports = (db) => {
       JOIN items ON list_id = lists.id
       JOIN users ON user_id = users.id
       WHERE users.id = $1 AND list_id = $2
+      ORDER BY items.id
       LIMIT 15;
       `, [userID, listID]))
         .then(data => {
@@ -53,7 +63,7 @@ module.exports = (db) => {
     const userID = req.session["user_id"];
     const text = req.body.text;
     // change hardcoded
-    console.log("post route listid is:", res)
+    console.log("post route listid is:", req.params)
     const listID = req.params.listID;
     db.query(`UPDATE items
     SET list_id = $1
