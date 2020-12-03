@@ -1,25 +1,7 @@
 const express = require('express');
 const router  = express.Router();
 const bcrypt = require('bcrypt');
-
-const getUserByEmail = function(db, email) {
-  const sqlQuery = `
-  SELECT * 
-  FROM users
-  WHERE email = $1;
-  `;
-  const values = [email];
-  return db.query(sqlQuery, values)
-};
-
-const addUser = (db, email, hashedPassword, username) => {
-  const sqlQuery = `
-  INSERT INTO users (email, password, username)
-  VALUES ($1, $2, $3);
-  `;
-  const values = [email, hashedPassword, username]
-  return db.query(sqlQuery, values)
-}
+const { getUserByEmail, addUser } = require('./credHelpers.js');
 
 module.exports = (db) => {
   // register
@@ -35,6 +17,10 @@ module.exports = (db) => {
         console.log("user exists");
         // show error
         res.redirect("credentials");
+      } else if (!email || !password || !username) {
+        console.log("missing field exists");
+        // show error
+        res.redirect("credentials");
       } else {
         addUser(db, email, hashedPassword, username)
         .then(newUser => {
@@ -43,7 +29,7 @@ module.exports = (db) => {
           .then(dbres => {
             // console.log("USER: ", dbres)
             const user = dbres.rows[0]; // in this instance having [0] is okay bc we deteremined that there would only be 1 entry
-            console.log("Registered User: ", user.username, user.password, user.email, user.id)
+            console.log("Registered as User: ", user.username, user.password, user.email, user.id)
             // console.log("ID: ", user.id)
             // console.log("USER: ", user)
             // if match
