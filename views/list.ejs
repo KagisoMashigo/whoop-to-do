@@ -33,7 +33,7 @@
         <section class="todo-cmp">
           <header class="todo-cmp__header">
             <h2>
-              <%= lists[0].username %>'s  <%= lists[0].title %>
+              <%= lists[0].username %>'s <%= lists[0].title %>
             </h2>
             <p>
               <script> document.write(new Date().toDateString()); </script>
@@ -42,20 +42,43 @@
           <div class="add_item">
             <button>Add an item</button>
           </div>
-          <form action="/lists" method="POST" class="item_toggle">
+          <form action="/list/<%= listID %>" method="POST" class="item_toggle">
             <label for="new_item_name"> </label>
             <textarea name="text"  id="name-text" placeholder ="Name of new item"></textarea>
             <button id="add" type="submit">Submit</button>
           </form>
+          <% for(let list in lists) { %>
           <ul class="todo-cmp__list">
           <section class="display-personal-lists" id="display-personal-lists">
-            <% for(let list in lists) { %>
-                <%= lists[list].name %><br>
-                <%= lists[list].description %><br>
+               <li id= <%= lists[list].item_id %>>
+                <label for="todo- <%= lists[list].item_id%>">
+                  <input id="todo- <%= lists[list].item_id %>" type="checkbox">
+                  <container class ="container">
+                    <div class="list_name">
+                      <%= lists[list].name %><br>
+                    </div>
+                    <div class="list_description">
+                      <%= lists[list].description %><br>
+                    </div>
+                  </container>
+                  </label>
+                <footer class= "buttons">
+                  <form class="item_delete">
+                  <button id ="delete" type="submit">
+                    <span class="glyphicon glyphicon-trash"></span>
+                  </button>
+                </form>
+                <form class="item_fave">
+                  <button id="fave" type="submit">
+                    <span class="glyphicon glyphicon-heart"></span>
+                    </button>
+                  </form>
+                  </footer>
+                </li>
             <% } %>
-
-          </section>
           </ul>
+          </section>
+
 
       </div>
     </div>
