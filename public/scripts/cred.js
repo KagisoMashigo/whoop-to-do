@@ -21,24 +21,34 @@ const checkSectionErrors = (section, errMsgHtml, delay, slideSpeed) => {
 // Document ready ensures all functions will only be called once the page has loaded
 $(document).ready(() => {
   toggleForm();
-  // Error handling
-  
-  // test for login form
-$("#signup").on('click', function() {
-  console.log("Clicked!")
-  $(".message").css("transform", "translateX(100%)");
-  if ($(".message").hasClass("login")) {
-    $(".message").removeClass("login");
-  }
-  $(".message").addClass("signup");
-});
 
-$("#login").on('click', function() {
-  console.log("Clicked!")
-  $(".message").css("transform", "translateX(0)");
-  if ($(".message").hasClass("login")) {
-    $(".message").removeClass("signup");
-  }
-  $(".message").addClass("login");
-});
+  // Error handling
+  $("#login").submit(function(event) {
+    if ($('.textarea').val().length > 140) {
+      checkSectionErrors('.errors', `<strong>⚠️ Reduce your character count </strong>`, 650, 'slow');
+      event.preventDefault();
+    } else if ($('.textarea').val().length === 0) {
+      checkSectionErrors('.errors', `<strong>⚠️ Add to your character count </strong>`, 650, 'slow');
+      event.preventDefault();
+    } else {}
+  });
+
+  // test for login form
+  $("#signup").on('click', function() {
+    console.log("Clicked!")
+    $(".message").css("transform", "translateX(100%)");
+    if ($(".message").hasClass("login")) {
+      $(".message").removeClass("login");
+    }
+    $(".message").addClass("signup");
+  });
+
+  $("#login").on('click', function() {
+    console.log("Clicked!")
+    $(".message").css("transform", "translateX(0)");
+    if ($(".message").hasClass("login")) {
+      $(".message").removeClass("signup");
+    }
+    $(".message").addClass("login");
+  });
 });
