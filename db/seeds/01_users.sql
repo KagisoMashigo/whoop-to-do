@@ -26,6 +26,6 @@ VALUES ('cloud@ff7.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQg
 INSERT INTO users (email, password, username)
 VALUES ('ellie@tlou2.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 'ellie');
 INSERT INTO users (email, password, username)
-VALUES ('Geralt@blackiven.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 'Geralt');
+VALUES ('ger@riv.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 'Geralt');
 INSERT INTO users (email, password, username)
 VALUES ('Triss@merigold.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 'Triss');
