@@ -64,9 +64,17 @@ $(document).ready(function() {
     });
   });
 
-  $('#sort-items').on('submit', () => {
-    $.ajax('/api/tmdblist', { method: 'GET' })
+  $('#sort-items').on('submit', (event) => {
+    event.preventDefault();
+
+    $.ajax({
+      url: "/api/items",
+      method: "POST",
+      data: $(this).serialize()
+    })
+    .then(() => $.ajax('/api/tmdblist', { method: 'GET' }))
     .then(console.log('hello'))
+
   })
 
 });

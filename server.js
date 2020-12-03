@@ -76,7 +76,7 @@ app.use("/api/booklists", fetchBooksLists(db));
 app.use("/api/foodlists", fetchFoodLists(db));
 app.use("/api/productlists", fetchProductLists(db));
 app.use("/api/movielists", fetchMovieLists(db));
-app.use("/api/tmdblist", fetchMovieApi(db))
+app.use("/api/tmdblist", fetchMovieApi('blade%20runner'))
 
 // Home page
 // Warning: avoid creating more routes in this file!
