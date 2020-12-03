@@ -12,7 +12,7 @@ const { getUserByEmail, displayPublicLists } = require('./credHelpers.js');
 module.exports = (db) => {
 
   router.get("/", (req, res) => {
-    
+
     const userID = req.session["user_id"];
     if (!userID){
       (displayPublicLists(db))
@@ -34,7 +34,7 @@ module.exports = (db) => {
 
   // login
   router.post("/", (req, res) => {
-    // console.log("posted to...")    
+    // console.log("posted to...")
     const { email, password } = req.body;
     // console.log(req.body, email, password)
     getUserByEmail(db, email)

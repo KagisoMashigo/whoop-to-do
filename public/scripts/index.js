@@ -63,4 +63,10 @@ $(document).ready(function() {
       window.location.href = `/list/${listID}`;
     });
   });
+
+  $('#sort-items').on('submit', () => {
+    $.ajax('/api/tmdblist', { method: 'GET' })
+    .then(console.log('hello'))
+  })
+
 });
