@@ -3,22 +3,36 @@ const router = express.Router();
 
 module.exports = (db) => {
 
-  router.get("/", (req, res) => {
+  // app.get("/urls/:shortURL", (req, res) => {
+  //   const user = users[req.session.user_id];
+  //   const shortURL = req.params.shortURL;
+  //   const templateVars = {
+  //     user,
+  //     shortURL,
+  //     longURL: urlDatabase[shortURL].longURL
+  //   };
+  //   if (!user) {
+  //     res.render("error_login", templateVars);
+  //   }
+  //   res.render("urls_show", templateVars);
+  // });
+
+  router.get("/:listID", (req, res) => {
     const userID = req.session["user_id"]
-     console.log(req.session, "sesh")
+    const listID = req.params.listID;
+  //   console.log(req.session, "sesh")
     if (userID) {
       (db.query(`
       SELECT items.name, items.description, items.id, lists.title, lists.id, users.username
       FROM lists
       JOIN items ON list_id = lists.id
       JOIN users ON user_id = users.id
-      WHERE users.id = $1;
-      `, [userID]))
+      WHERE users.id = $1 AND list_id = $2;
+      `, [userID, listID]))
         .then(data => {
           const lists = data.rows;
-          // console.log("DATA:", lists)
-          // res.json({ lists });
-          const templateVars = { lists, userID }
+          const templateVars = { lists, userID, listID }
+          console.log(templateVars)
           res.render("list", templateVars)
         })
         .catch(err => {
@@ -35,14 +49,17 @@ module.exports = (db) => {
 // when you add an item it edits the list_id to correct id
   router.post("/", (req, res) => {
     const userID = req.session["user_id"];
-    console.log(req, "req")
     const text = req.body.text;
-    const listID = 1;
+
+    // change hardcoded
+    const listID = req.params.listID;
     db.query(`UPDATE items
     SET list_id =$1
-    WHERE name LIKE '%'||$2||'%';
+    WHERE name ILIKE '%'||$2||'%'
     `, [listID, text])
     .then(item => {
+
+      // v change
       res.redirect("/lists")
     })
     .catch(err => {
@@ -60,6 +77,8 @@ module.exports = (db) => {
     WHERE id = $1;
     `,[itemId])
     .then(item => {
+
+      // v change
       res.redirect("/lists")
     })
     .catch(err => {
@@ -77,6 +96,7 @@ module.exports = (db) => {
     WHERE id = $1
     `, [itemId])
     .then(item => {
+      // v change
       res.redirect("/lists")
     })
     .catch(err => {
@@ -84,8 +104,8 @@ module.exports = (db) => {
         .status(500)
         .json({ error: err.message });
     });
-
-
   })
   return router;
 };
+
+
