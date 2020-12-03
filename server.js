@@ -82,12 +82,6 @@ app.use("/api/tmdblist", fetchMovieApi(db))
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
-// get request for list:id
-// app.get("/list:id", (req, res) => {
-//   res.render("list");
-// });
-
-
 app.listen(PORT, () => {
   console.log(`Whoop-To-Do server listening on port ${PORT} leggo!`);
 });
