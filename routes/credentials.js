@@ -2,6 +2,7 @@
  * See: https://expressjs.com/en/guide/using-middleware.html#middleware.router
  */
 //POA - 1: css for page, refractoring, utilise default list maker, error handling for JS logic
+// API Books: https://www.googleapis.com/books/v1/volumes?q=harry+potter+inauthor:rowling&key=AIzaSyBT-iVATn5jscoq7CUm_qUmzb_s9NdR01E
 
 const bcrypt = require('bcrypt');
 const express = require('express');
@@ -40,7 +41,7 @@ module.exports = (db) => {
       if(dbres.rows.length === 0) {
         // ("no such user") redirect here (potentially with info as to why)
         console.log("ERROR: no such user");
-        res.redirect("/api/credentials");
+        res.redirect("/credentials");
       } else {
         let user = dbres.rows[0]; // in this instance having [0] is okay bc we deteremined that there would only be 1 entry
         if (bcrypt.compareSync(password, user.password)) {
@@ -54,7 +55,7 @@ module.exports = (db) => {
         } else {
           // same as 25 except with password error
           console.log("ERROR: no such password");
-          res.redirect("/api/credentials");
+          res.redirect("/credentials");
         }
       }
     })
@@ -64,7 +65,7 @@ module.exports = (db) => {
   router.post("/logout", (req, res) => {
     // console.log("POST RECEIVED")
     req.session = null;
-    res.redirect("/api/credentials");
+    res.redirect("/credentials");
   });
   return router;
 };

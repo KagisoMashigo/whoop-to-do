@@ -59,7 +59,7 @@ app.use("/lists", listsRoutes(db));
 app.use("/api/categories", categoriesRoutes(db));
 app.use("/api/items", itemsRoutes(db));
 // Note: mount other resources here, using the same pattern above
-app.use("/api/credentials", credRoutes(db));
+app.use("/credentials", credRoutes(db));
 app.use("/api/register", regRoutes(db));
 
 // added by emtupp
