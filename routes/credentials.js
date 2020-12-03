@@ -10,7 +10,7 @@ const router  = express.Router();
 
 const getUserByEmail = function(db, email) {
   const sqlQuery = `
-  SELECT * 
+  SELECT *
   FROM users
   WHERE email = $1;
   `;
@@ -52,13 +52,14 @@ module.exports = (db) => {
 
   // login
   router.post("/", (req, res) => {
-    // console.log("posted to...")    
+    // console.log("posted to...")
     const { email, password, username } = req.body;
     // console.log(req.body, email, password)
     getUserByEmail(db, email)
     .then(dbres => {
       if(dbres.rows.length === 0) {
         // ("no such user") redirect here (potentially with info as to why)
+        alert('error')
         console.log("ERROR: no such user")
         res.redirect("/api/credentials");
       } else {
