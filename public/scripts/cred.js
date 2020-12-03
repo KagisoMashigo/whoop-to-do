@@ -22,15 +22,36 @@ const checkSectionErrors = (section, errMsgHtml, delay, slideSpeed) => {
 $(document).ready(() => {
   toggleForm();
 
-  // Error handling
-  $("#login").submit(function(event) {
-    if ($('.textarea').val().length > 140) {
-      checkSectionErrors('.errors', `<strong>⚠️ Reduce your character count </strong>`, 650, 'slow');
+  // Login error handling
+  $("#log_form").submit(function(event) {
+    // console.log("SUBMITTED")
+    if ($('#log_email').val().length === 0) {
+      checkSectionErrors('.errors', `<strong>⚠️ Please enter a valid email address </strong>`, 750, 'slow');
       event.preventDefault();
-    } else if ($('.textarea').val().length === 0) {
-      checkSectionErrors('.errors', `<strong>⚠️ Add to your character count </strong>`, 650, 'slow');
+      console.log("SUBMITTED")
+    } else if ($('#log_password').val().length === 0) {
+      checkSectionErrors('.errors', `<strong>⚠️ Please enter a valid password </strong>`, 750, 'slow');
       event.preventDefault();
-    } else {}
+      console.log("SUBMITTED2")
+    }
+  });
+
+  // Reg error handling
+  $("#reg_form").submit(function(event) {
+    // console.log("SUBMITTED")
+    if ($('#reg_name').val().length === 0) {
+      checkSectionErrors('.errors', `<strong>⚠️ Please enter a name, like the one you were given maybe? </strong>`, 750, 'slow');
+      event.preventDefault();
+      console.log("SUBMITTED")
+    } else if ($('#reg_email').val().length === 0) {
+      checkSectionErrors('.errors', `<strong>⚠️ Please enter a email </strong>`, 750, 'slow');
+      event.preventDefault();
+      console.log("SUBMITTED2")
+    } else if ($('#reg_password').val().length === 0) {
+      checkSectionErrors('.errors', `<strong>⚠️ Please enter a password </strong>`, 750, 'slow');
+      event.preventDefault();
+      console.log("SUBMITTED3")
+    }
   });
 
   // test for login form
