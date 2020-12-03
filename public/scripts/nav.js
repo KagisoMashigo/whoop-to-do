@@ -3,33 +3,39 @@ $(document).ready(function() {
 
   $('#logo').on('click', function(e) {
     window.location.href = `/`;
+  });
+
+  $.ajax('/api/foodlists', { method: 'GET' })
+  .then((list) => {
+    $('#food').on('click', () => {
+      window.location.href = `/list/${list.list[0].id}`;
+    })
+  });
+
+    $.ajax('/api/booklists', { method: 'GET' })
+  .then((list) => {
+    $('#books').on('click', () => {
+      window.location.href = `/list/${list.list[0].id}`;
+    })
+  });
+
+  $.ajax('/api/movielists', { method: 'GET' })
+  .then((list) => {
+    $('#movies').on('click', () => {
+      window.location.href = `/list/${list.list[0].id}`;
+    })
+  });
+
+  $.ajax('/api/productlists', { method: 'GET' })
+  .then((list) => {
+    $('#products').on('click', () => {
+      window.location.href = `/list/${list.list[0].id}`;
+    })
+  });
+
+  $('#form-add').on('click', function() {
+    alert('Knock knock!')
   })
 
-  $('#food').on('click', function(e) {
-    const listID = e.delegateTarget.id;
-    if (listID === 'food') {
-      console.log('Yummy!')
-    }
-  })
 
-  $('#books').on('click', function(e) {
-    const listID = e.delegateTarget.id;
-    if (listID === 'books') {
-      console.log('All art is quite useless.')
-    }
-  })
-
-  $('#movies').on('click', function(e) {
-    const listID = e.delegateTarget.id;
-    if (listID === 'movies') {
-      console.log('WHAT\'S IN THE BOX?!')
-    }
-  })
-
-  $('#products').on('click', function(e) {
-    const listID = e.delegateTarget.id;
-    if (listID === 'products') {
-      console.log('Yay! Capitalism!')
-    }
-  })
 })

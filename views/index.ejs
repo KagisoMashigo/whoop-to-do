@@ -22,10 +22,23 @@
 
   <body>
     <%- include('partials/_nav') %>
-    <h3>My Lists</h3>
-    <section class="display-lists" id="display-lists">
 
+    <section id="homepage-header">
+      <h1>
+        <%= lists[0].username %>'s  lists
+      </h1>
     </section>
+
+    <section id="add-item-form">
+      <form action="" method="POST" id="sort-items">
+        <input type="text" name="query-search" placeholder="EGG"/>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <section class="display-lists" id="display-lists">
+    </section>
+
   </body>
 </html>
 

@@ -6,7 +6,7 @@ module.exports = (db) => {
     const userID = req.session["user_id"];
     if (userID) {
       (db.query(`
-      SELECT lists.title, lists.id, items.name
+      SELECT lists.title, lists.id, items.name, users.username
       FROM lists
       JOIN items ON list_id = lists.id
       JOIN users ON user_id = users.id
