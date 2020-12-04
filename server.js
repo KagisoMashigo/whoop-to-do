@@ -46,7 +46,7 @@ const regRoutes = require("./routes/register");
 const listsRoutes = require("./routes/lists");
 const categoriesRoutes = require("./routes/categories");
 const itemsRoutes = require("./routes/items");
-// const apiRoutes = require("./routes/books");
+const apiRoutes = require("./routes/books");
 
 // added by emtupp
 const getListByUser = require("./routes/index_queries/lists_by_user_db");
@@ -70,7 +70,8 @@ app.use("/api/items", itemsRoutes(db));
 // Note: mount other resources here, using the same pattern above
 app.use("/credentials", credRoutes(db));
 app.use("/register", regRoutes(db));
-// app.use("/api/books", apiRoutes(db));
+
+app.use("/api/books", apiRoutes(db));
 
 // added by emtupp
 app.use("/api/userlist", getListByUser(db));
