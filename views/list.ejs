@@ -34,14 +34,7 @@
 
 <body>
   <%- include('partials/_nav') %>
-  <div class="add_item">
-    <button>Add an item</button>
-  </div>
-  <form action="/list/<%= listID %>" method="POST" class="item_toggle">
-    <label for="new_item_name"> </label>
-    <textarea name="text" id="name-text" placeholder="Name of new item"></textarea>
-    <button id="add" type="submit">Submit</button>
-  </form>
+
   <div class="center">
     <section class="todo-cmp">
       <header class="todo-cmp__header">
@@ -52,6 +45,14 @@
           <script> document.write(new Date().toDateString()); </script>
         </p>
       </header>
+      <div class="add_item">
+        <button>Add an item</button>
+      </div>
+      <form action="/list/<%= listID %>" method="POST" class="item_toggle">
+        <label for="new_item_name"> </label>
+        <textarea name="text" id="name-text" placeholder="Name of new item"></textarea>
+        <button id="add" type="submit">Submit</button>
+      </form>
       <% for(let list in lists) { %>
       <ul class="todo-cmp__list">
         <section class="display-personal-lists" id="display-personal-lists">
@@ -83,14 +84,6 @@
           <% } %>
       </ul>
     </section>
-    <div class="add_item">
-      <button>Add an item</button>
-    </div>
-    <form action="/list/<%= listID %>" method="POST" class="item_toggle">
-      <label for="new_item_name"> </label>
-      <textarea name="text" id="name-text" placeholder="Name of new item"></textarea>
-      <button id="add" type="submit">Submit</button>
-    </form>
   </div>
   </div>
 </body>

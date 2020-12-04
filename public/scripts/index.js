@@ -50,7 +50,6 @@ const renderLists = function(lists) {
     for (let item of lists[list]) {
       if (!dbObj[item.title]) {
         dbObj[item.title] = { id: item.id , list: [item.name] }
-        // dbObj[item.title] = [item.name];
       } else {
         dbObj[item.title].list.push(item.name);
       }
@@ -62,9 +61,7 @@ const renderLists = function(lists) {
   }
 };
 
-
 // ----------- Displays when there are too many items, or append new item ------------
-
 
 const showAllResults = function(result) {
   let $result = $(`<li>${escape(result)}</li>`
@@ -87,12 +84,8 @@ const renderResults = function(results) {
 };
 
 
-
-
 // Rendering the tweets (see further comments)
 $(document).ready(function() {
-
-  console.log("Ready to go!");
   $.ajax('/api/userlist', { method: 'GET' })
   .then((lists) => {
     renderLists(lists)
@@ -113,13 +106,10 @@ $(document).ready(function() {
     })
     .then((data) => {
       if (data.movies.length === 1) {
-        console.log("WOOHOO!")
         console.log(data)
-        // $.ajax('/api/tmdblist', { method: 'GET' })
       } else if (data.movies.length === 0) {
         alert("We didn't find your item 😢\nMaybe there was a typo?")
       } else {
-        console.log('so many...')
         console.log(renderResults(data))
       }
     })

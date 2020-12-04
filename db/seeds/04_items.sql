@@ -10,6 +10,14 @@ INSERT INTO items (name, description, favourite, list_id)
 VALUES ('Ex Machina', 'Consider watching this movie before going on a date with a robot', false, 1);
 INSERT INTO items (name, description, favourite, list_id)
 VALUES ('God Bless America', 'Make America great again', false, 1);
+INSERT INTO items (name, description, favourite, list_id)
+VALUES ('The Wolf of Wall Street', 'Rich guy, makes lots of money, does a whole lot of drugs', false, null);
+INSERT INTO items (name, description, favourite, list_id)
+VALUES ('Avengers: Infinty War', 'Spoiler alert: everyone turns to dust', false, null);
+INSERT INTO items (name, description, favourite, list_id)
+VALUES ('Get Out', 'Trippy', false, null);
+INSERT INTO items (name, description, favourite, list_id)
+VALUES ('The SpongeBob Square Pants Movie', 'A sponge and a starfish go on a wild adventure', false, null);
 
 INSERT INTO items (name, description, favourite, list_id)
 VALUES ('1984', 'Are you a socialist who hates socialism? This book is for you!', false, 2);
@@ -21,6 +29,9 @@ INSERT INTO items (name, description, favourite, list_id)
 VALUES ('The Hobbit', 'It''s for children, but adults are reading it.', false, 2);
 INSERT INTO items (name, description, favourite, list_id)
 VALUES ('Moliere: l''oeuvre complete', 'lol what is even litterature', false, 2);
+INSERT INTO items (name, description, favourite, list_id)
+VALUES ('The Very Hungry Caterpillar', 'Title says it all', false, null);
+
 
 INSERT INTO items (name, description, favourite, list_id)
 VALUES ('Arthurs', 'Traditional Jewish deli serving breakfast & sandwiches in a bright, stylish space.', false, 3);
@@ -32,6 +43,10 @@ INSERT INTO items (name, description, favourite, list_id)
 VALUES ('Park', 'Spa eatery with dark-wood walls for fish-centric Japanese fusion fare, plus sushi & tasting menus.', false, 3);
 INSERT INTO items (name, description, favourite, list_id)
 VALUES ('Moishes', 'Venerable steakhouse serving charbroiled meats & Jewish sides in an old-world atmosphere.', false, 3);
+INSERT INTO items (name, description, favourite, list_id)
+VALUES ('Orange Julep', 'Giant orange orb that sells good hot-dogs.', false, null);
+
+
 
 INSERT INTO items (name, description, favourite, list_id)
 VALUES ('Bidet', 'Bowl or receptacle designed to be sat on for the purpose of washing the human bits and bots.', false, 4);
@@ -43,3 +58,6 @@ INSERT INTO items (name, description, favourite, list_id)
 VALUES ('A tiny house', 'It''s like a trailer park, but gentrified.', false, 4);
 INSERT INTO items (name, description, favourite, list_id)
 VALUES ('Oculous Rift', 'For people who have given up on life in style', false, 4);
+INSERT INTO items (name, description, favourite, list_id)
+VALUES ('Shake Weights', 'Time to work on the Summer bod', false, null);
+
