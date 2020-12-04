@@ -1,12 +1,11 @@
 const axios = require('axios');
 const express = require('express');
-const items = require('../items');
+// const items = require('../items');
 const router = express.Router();
 
 module.exports = (db) => {
 
   router.get("/", (req, res) => {
-    console.log(req.body)
     const { name, description } = req.body;
      axios({
         method: "GET",
