@@ -29,6 +29,7 @@ app.use(morgan('dev'));
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use("/styles", sass({
   src: __dirname + "/styles",
   dest: __dirname + "/public/styles",
@@ -76,7 +77,7 @@ app.use("/api/booklists", fetchBooksLists(db));
 app.use("/api/foodlists", fetchFoodLists(db));
 app.use("/api/productlists", fetchProductLists(db));
 app.use("/api/movielists", fetchMovieLists(db));
-app.use("/api/tmdblist", fetchMovieApi('blade%20runner'))
+app.use("/api/tmdblist", fetchMovieApi(db));
 
 // Home page
 // Warning: avoid creating more routes in this file!
