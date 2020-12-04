@@ -41,25 +41,26 @@ app.use(express.static("public"));
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
-const credRoutes = require("./routes/credentials");
-const regRoutes = require("./routes/register");
-const listsRoutes = require("./routes/lists");
 const categoriesRoutes = require("./routes/categories");
 const itemsRoutes = require("./routes/items");
-// const apiRoutes = require("./routes/books");
+
+// added by josh-lerner
+const listsRoutes = require("./routes/lists");
 
 // added by emtupp
 const getListByUser = require("./routes/index_queries/lists_by_user_db");
 const renderIndex = require("./routes/index_queries/lists_by_user");
 const fetchBooksLists = require("./routes/nav_queries/nav_link_books");
 const fetchFoodLists = require("./routes/nav_queries/nav_link_food");
-const register = require('./routes/register');
 const fetchProductLists = require("./routes/nav_queries/nav_link_products");
 const fetchMovieLists = require("./routes/nav_queries/nav_link_movies");
 const fetchMovieApi = require("./routes/api_requests/TMDb");
 const fetchRestoApi = require("./routes/api_requests/resto");
 
-
+// added by isoMashigo
+const credRoutes = require("./routes/credentials");
+const regRoutes = require("./routes/register");
+// const apiRoutes = require("./routes/books");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -67,9 +68,10 @@ app.use("/api/users", usersRoutes(db));
 app.use("/list", listsRoutes(db));
 app.use("/api/categories", categoriesRoutes(db));
 app.use("/api/items", itemsRoutes(db));
-// Note: mount other resources here, using the same pattern above
-app.use("/credentials", credRoutes(db));
+
+// added by isoMashigo
 app.use("/register", regRoutes(db));
+app.use("/credentials", credRoutes(db));
 // app.use("/api/books", apiRoutes(db));
 
 // added by emtupp
@@ -81,14 +83,6 @@ app.use("/api/productlists", fetchProductLists(db));
 app.use("/api/movielists", fetchMovieLists(db));
 app.use("/api/tmdblist", fetchMovieApi(db));
 app.use("/api/restolist", fetchRestoApi(db));
-
-
-
-
-// app.use("/api/lists", getList(db));
-// Home page
-// Warning: avoid creating more routes in this file!
-// Separate them into separate routes files (see above).
 
 app.listen(PORT, () => {
   console.log(`Whoop-To-Do server listening on port ${PORT} leggo!`);

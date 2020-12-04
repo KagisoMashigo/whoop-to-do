@@ -1,18 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-// const getListId = function(db, email) {
-//   const sqlQuery = `
-//   SELECT lists.id, lists.title
-//   FROM lists
-//   JOIN categories ON category_id = categories.id
-//   WHERE categories.category ILIKE lists.title
-//    ;
-//   `;
-//   const values = [email];
-//   return db.query(sqlQuery, values)
-// };
-
 module.exports = (db) => {
 
   router.get("/:listID", (req, res) => {
@@ -106,5 +94,3 @@ module.exports = (db) => {
   })
   return router;
 };
-
-

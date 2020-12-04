@@ -60,16 +60,4 @@
     [userID]);
   }
 
-  // const defaultListMaker = () => {
-  //   INSERT INTO lists (title, public, category_id, user_id)
-  //   VALUES ('Movies', true, 1, 2);
-  //   INSERT INTO lists (title, public, category_id, user_id)
-  //   VALUES ('Books', true, 4, 2);
-  //   INSERT INTO lists (title, public, category_id, user_id)
-  //   VALUES ('Restaurants', true, 2, 7);
-  //   INSERT INTO lists (title, public, category_id, user_id)
-  //   VALUES ('Products', false, 3, 8);
-  //   INSERT INTO lists (title, public, category_id, user_id)
-  // }
-
 module.exports = { getUserByEmail, displayPublicLists, addUser, createMovies, createBooks, createRestaurants, createProducts };

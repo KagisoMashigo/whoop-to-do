@@ -1,9 +1,5 @@
-/*
- * See: https://expressjs.com/en/guide/using-middleware.html#middleware.router
- */
-//POA - 1: css for page, refractoring, utilise default list maker, error handling for JS logic
-// API Books: https://www.googleapis.com/books/v1/volumes?q=harry+potter+inauthor:rowling&key=AIzaSyBT-iVATn5jscoq7CUm_qUmzb_s9NdR01E
-
+//POA: css for page, refractoring, utilise default list maker, error handling for JS logic
+// Do not delete logs
 const bcrypt = require('bcrypt');
 const express = require('express');
 const router  = express.Router();

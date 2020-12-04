@@ -1,6 +1,3 @@
-
-
-
 //  toggles the add item text area and submit button
 const toggleForm = () => {
   const $addItem = $('.add_item');

@@ -26,11 +26,11 @@ $(document).ready(() => {
   $("#log_form").submit(function(event) {
     // console.log("SUBMITTED")
     if ($('#log_email').val().length === 0) {
-      checkSectionErrors('.errors', `<strong>⚠️ Please enter a valid email address </strong>`, 1500, 'slow');
+      checkSectionErrors('.errors', `<strong>⚠️ Please enter a valid email address </strong>`, 1750, 'slow');
       event.preventDefault();
       console.log("SUBMITTED")
     } else if ($('#log_password').val().length === 0) {
-      checkSectionErrors('.errors', `<strong>⚠️ Please enter a valid password </strong>`, 1500, 'slow');
+      checkSectionErrors('.errors', `<strong>⚠️ Please enter a valid password </strong>`, 1750, 'slow');
       event.preventDefault();
       console.log("SUBMITTED2")
     }
@@ -40,15 +40,15 @@ $(document).ready(() => {
   $("#reg_form").submit(function(event) {
     // console.log("SUBMITTED")
     if ($('#reg_name').val().length === 0) {
-      checkSectionErrors('.errors', `<strong>⚠️ Please enter a name, like the one you were given maybe? </strong>`, 1500, 'slow');
+      checkSectionErrors('.errors', `<strong>⚠️ Please enter a name, like the one you were given maybe? </strong>`, 1750, 'slow');
       event.preventDefault();
       console.log("SUBMITTED")
     } else if ($('#reg_email').val().length === 0) {
-      checkSectionErrors('.errors', `<strong>⚠️ Please enter an email </strong>`, 1500, 'slow');
+      checkSectionErrors('.errors', `<strong>⚠️ Please enter an email </strong>`, 1750, 'slow');
       event.preventDefault();
       console.log("SUBMITTED2")
     } else if ($('#reg_password').val().length === 0) {
-      checkSectionErrors('.errors', `<strong>⚠️ Please enter a password </strong>`, 1500, 'slow');
+      checkSectionErrors('.errors', `<strong>⚠️ Please enter a password </strong>`, 1750, 'slow');
       event.preventDefault();
       console.log("SUBMITTED3")
     }
