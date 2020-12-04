@@ -24,7 +24,7 @@ module.exports = (db) => {
         });
     } else {
       // res redirect to credentials
-      res.redirect("/api/credentials")
+      res.redirect("/credentials")
       }
   });
   return router;

@@ -21,7 +21,7 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
     } else {
-      res.redirect('/api/credentials')
+      res.redirect('/credentials')
     }
   });
   return router;
