@@ -4,25 +4,26 @@
 
 // use only the available space inside the 400x400 frame
 
+// full list
 .center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
+// add an item button
 .item_toggle{
   display:none
 }
 
+// inside .center
 .todo-cmp {
 	background: #E2D7E2;
 	color: #497081;
 	padding: 10px 30px;
 	border-radius: 5px;
 	box-shadow: 2px 2px 14px rgba(0,0,0,0.15);
-  width: 500px;
-  margin-top: 375px;
+  width: 80%;
+  margin-top: 150px;
 
 
 	&__header {
@@ -33,7 +34,7 @@
     // list title
 		h2 {
 			font-weight: 600;
-			font-size: 3em;
+			font-size: 2em;
 			margin: 4px auto;
       padding: 0;
       text-transform: capitalize;
@@ -96,16 +97,14 @@ footer {
 
 				input + .container::after {
 						content: "";
-						display: block;
+						display: flex;
 						border: 1px solid #497081;
 						border-radius: 13px;
 						height: 13px;
 						width: 13px;
-						position: absolute;
 						right: 0;
 						top: 1px;
 						z-index: 10;
-
 					 transition: all 550ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
 					 transition-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550);
 					/* https://matthewlein.com/tools/ceaser */
@@ -113,20 +112,19 @@ footer {
 
 				input + .container::before {
 						content: "✔";
-						display: block;
+						display: flex;
 						font-size: 22px;
 						height: 13px;
 						width: 13px;
-						position: absolute;
 						right: -2px;
 						top: -8px;
 						z-index: 10;
-						opacity: 0;
+            opacity: 0;
 				}
 
 				input:checked + .container {
 					color: #ccc;
-					transition: all 550ms ease-in-out;
+          transition: all 550ms ease-in-out;
 				}
 
 				input:checked + .container::after {
@@ -134,12 +132,12 @@ footer {
 					 	height: 17px;
 					 	width: 17px;
 					  top: -2px;
-					  right: -2px;
+            right: -2px;
 				}
 
 				input:checked + .container::before {
 						opacity: 1;
-					 transition: all 550ms ease-in-out;
+           transition: all 550ms ease-in-out;
 				}
 			}
 		}
