@@ -21,14 +21,26 @@ const addItems = function($list, items) {
 // Creates a box containing the list's title and its elements.
 // This box will exist inside the "display-lists" section in the body of index.ejs.
 const createNewList = function(list) {
-  let $list = $(`<article class="list" id="${escape(list[1].id)}">
+  console.log(list[1].list[0])
+  if (list[1].list[0] === null) {
+    let $list = $(`<article class="list" id="${escape(list[1].id)}">
                   <h5>${escape(list[0])}</h5>
                   <ul class="individual-list">
+                  <li>This list is empty!</li>
                   </ul>
                  </article>`
                 );
-  addItems($list, list[1].list);
   return $list;
+  } else {
+    let $list = $(`<article class="list" id="${escape(list[1].id)}">
+                   <h5>${escape(list[0])}</h5>
+                   <ul class="individual-list">
+                   </ul>
+                   </article>`
+                 );
+    addItems($list, list[1].list);
+    return $list;
+  }
 };
 
 // Renders the lists
@@ -103,6 +115,7 @@ $(document).ready(function() {
       if (data.movies.length === 1) {
         console.log("WOOHOO!")
         console.log(data)
+
       } else if (data.movies.length === 0) {
         alert("We didn't find your item 😢\nMaybe there was a typo?")
       } else {
@@ -110,6 +123,5 @@ $(document).ready(function() {
         console.log(renderResults(data))
       }
     })
-
   })
 });
