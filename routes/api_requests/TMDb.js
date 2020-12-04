@@ -16,6 +16,29 @@ const fetchMovie = (req, res) => {
   })
 };
 
+// const newItem = (req, res) => {
+//   fetchMovie(req, res)
+//   .then
+//   const itemName = req.body.search
+//   const userID = req.session["user_id"];
+//   const itemID = req.params.id;
+//   const listID = req.params.listID;
+//   db.query(`
+//   INSERT INTO items (name, description, list_id)
+//   VALUES ('${itemName}', 'For people who have given up on life in style', 4);
+//   `,[itemID])
+//   .then(item => {
+
+//     // v change
+//     res.redirect(`/list/${listID}`)
+//   })
+//   .catch(err => {
+//     res
+//       .status(500)
+//       .json({ error: err.message });
+//   });
+// }
+
 
 module.exports = (db) => {
 

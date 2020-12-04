@@ -63,7 +63,7 @@ const renderLists = function(lists) {
 };
 
 
-// ----------- Displays when there are too many items ------------
+// ----------- Displays when there are too many items, or append new item ------------
 
 
 const showAllResults = function(result) {
@@ -115,7 +115,7 @@ $(document).ready(function() {
       if (data.movies.length === 1) {
         console.log("WOOHOO!")
         console.log(data)
-
+        // $.ajax('/api/tmdblist', { method: 'GET' })
       } else if (data.movies.length === 0) {
         alert("We didn't find your item 😢\nMaybe there was a typo?")
       } else {
