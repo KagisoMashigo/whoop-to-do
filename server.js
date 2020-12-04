@@ -55,7 +55,9 @@ const fetchFoodLists = require("./routes/nav_queries/nav_link_food");
 const register = require('./routes/register');
 const fetchProductLists = require("./routes/nav_queries/nav_link_products");
 const fetchMovieLists = require("./routes/nav_queries/nav_link_movies");
-const fetchMovieApi = require("./routes/api_requests/TMDb")
+const fetchMovieApi = require("./routes/api_requests/TMDb");
+const fetchRestoApi = require("./routes/api_requests/resto");
+
 
 
 // Mount all resource routes
@@ -76,8 +78,12 @@ app.use("/api/booklists", fetchBooksLists(db));
 app.use("/api/foodlists", fetchFoodLists(db));
 app.use("/api/productlists", fetchProductLists(db));
 app.use("/api/movielists", fetchMovieLists(db));
-app.use("/api/tmdblist", fetchMovieApi(db))
+app.use("/api/tmdblist", fetchMovieApi(db));
+app.use("/api/restolist", fetchRestoApi(db));
 
+
+
+app.use("/api/tmdblist", fetchMovieApi(db));
 // app.use("/api/lists", getList(db));
 // Home page
 // Warning: avoid creating more routes in this file!
