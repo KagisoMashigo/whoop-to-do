@@ -11,12 +11,11 @@ const bookFetcher = (query, items) => {
     let queryValues = []
     // console.log("Title: ", item.volumeInfo.title)
     // console.log(booktext)
-    if (bookTitle.toLowerCase() === search.toLowerCase()) {
       console.log("FOUND DESC: ", bookDesc.toLowerCase())
       console.log("FOUND BOOK: ", bookTitle.toLowerCase())
-      queryValues.push(bookTitle)
-      queryValues.push(bookDesc)
-    }
+      const booky = bookTitle.toString()
+      queryValues.push(booky)
+      queryValues.push(bookDesc.toString())
     console.log(queryValues)
     return queryValues
   }
@@ -27,10 +26,10 @@ module.exports = (db) => {
 
   router.post("/", (req, res) => {
     // console.log("hit me")
-    const { booktext } = req.body;
-    // console.log(booktext)
+    const { booktext, authortext } = req.body;
+    // console.log(authortext)
 
-    axios.get('https://www.googleapis.com/books/v1/volumes?q=harry+potter+inauthor:rowling&key=AIzaSyBT-iVATn5jscoq7CUm_qUmzb_s9NdR01E')
+    axios.get(`https://www.googleapis.com/books/v1/volumes?q=harry+potter+inauthor:${booktext}&key=AIzaSyBT-iVATn5jscoq7CUm_qUmzb_s9NdR01E`)
     .then(function (response) {
       // handle success
       const itemsArray = response.data.items
