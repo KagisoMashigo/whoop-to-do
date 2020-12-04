@@ -75,3 +75,11 @@ module.exports = (db) => {
   });
   return router;
 };
+
+{/* <form class="new_book" action="/api/books" method="POST">
+<div class="add_item">
+  <input type="text" name="booktext"></input>
+  <input type="text" name="authortext"></input>
+  <button type="submit">Add new book</button>
+</div>
+</form> */}
