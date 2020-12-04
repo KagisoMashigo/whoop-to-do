@@ -1,6 +1,6 @@
-// This file contains all the logic for displaying and appending a user's lists
+// This file contains all the logic for displaying and appending a user's lists and for adding new items
 
-
+// ------- Append the lists ----------
 // Fixes HTML vulnerabilities
 const escape =  function(str) {
   let div = document.createElement('div');
@@ -51,6 +51,32 @@ const renderLists = function(lists) {
 };
 
 
+// ----------- Displays when there are too many items ------------
+
+
+const showAllResults = function(result) {
+  let $result = $(`<li>${escape(result)}</li>`
+                );
+  return $result;
+};
+
+// Renders all results
+const renderResults = function(results) {
+  const resultArr = [];
+  for (let result in results) {
+    for (let item of results[result]) {
+      resultArr.push(item.title);
+    }
+  }
+  for (let result of resultArr) {
+    const $result = showAllResults(result);
+    $('#append-results').append($result);
+  }
+};
+
+
+
+
 // Rendering the tweets (see further comments)
 $(document).ready(function() {
 
@@ -68,13 +94,22 @@ $(document).ready(function() {
     event.preventDefault();
 
     $.ajax({
-      url: "/api/items",
+      url: "/api/tmdblist",
       method: "POST",
-      data: $(this).serialize()
+      data: $(event.target).serialize(),
+      dataType: "json"
     })
-    .then(() => $.ajax('/api/tmdblist', { method: 'GET' }))
-    .then(console.log('hello'))
+    .then((data) => {
+      if (data.movies.length === 1) {
+        console.log("WOOHOO!")
+        console.log(data)
+      } else if (data.movies.length === 0) {
+        alert("We didn't find your item 😢\nMaybe there was a typo?")
+      } else {
+        console.log('so many...')
+        console.log(renderResults(data))
+      }
+    })
 
   })
-
 });
