@@ -39,6 +39,12 @@
               <script> document.write(new Date().toDateString()); </script>
             </p>
           </header>
+          <form class="new_book" action="/api/books" method="POST">
+            <div class="add_item">
+              <input type="text" name="booktext"></input>
+              <button type="submit">Add new book</button>
+            </div>
+          </form>
           <div class="add_item">
             <button>Add an item</button>
           </div>
