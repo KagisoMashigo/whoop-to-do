@@ -96,7 +96,6 @@ module.exports = (db) => {
     WHERE id = $1
     `, [itemId])
     .then(item => {
-      // v change
       res.redirect(`/list/${listID}`)
     })
     .catch(err => {
